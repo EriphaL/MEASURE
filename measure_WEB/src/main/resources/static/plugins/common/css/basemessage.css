@@ -1,0 +1,239 @@
+.formcontent table tbody tr td:nth-of-type(1){
+	text-align: left;
+	width:180px;
+}
+.formcontent table tbody tr td{
+	padding:5px;
+}
+
+#wxryxx{
+	padding:0;
+	max-height:360px !important;
+}
+label[class="error"]{
+	color:red;
+/* 	margin-left:5px; */
+	
+}
+.formcontent1 table{
+	font-size:12px;
+	width:100%;
+}
+.formcontent1 table tbody tr td input{
+	width:100%;
+
+}
+.formcontent1 table tbody tr td{
+	vertical-align: middle;
+}
+.formcontent1{
+	background:#e9fafb;
+	padding:5px;
+}
+.divClassLeft .bootstrap-table .fixed-table-container{
+	max-height:360px !important;
+}
+#rwmcxx .bootstrap-table .fixed-table-container{
+	max-height:280px;
+}
+/* 下拉树的下拉框样式 */
+.menuContent {
+	z-index: 9;
+}
+.menuContent ul.ztree {
+	margin-top: 10px;
+	border: 1px solid #617775;
+	background: #f0f6e4;
+	width: 162px;
+	height: 200px;
+	overflow-y: scroll;
+	overflow-x: auto;
+	position: relative;
+	z-index: 5;
+}
+.trueName{
+	position: absolute;
+    z-index: 9999;
+    left: 133px;
+    width: 192px;
+}
+.showSelect{
+	position: absolute;
+    z-index: 9999;
+    left: 100px;
+    width: 163px;
+}
+
+/* 工艺路线 */
+.gylx-table{
+	background: #f9f9f9 !important;
+}
+.gylxgl-table tbody tr td:nth-of-type(odd){
+	text-align: right;
+}
+
+.gylxgl-table tbody tr td input{
+	width:100%;
+	height:22px;
+}
+.gylx-table-top{
+	background: #ddd;
+	margin-top:30px;
+	/* padding:5px; */
+}
+.gylx-table-top>button{
+	padding:3px 6px !important;
+}
+.gylx-table-top>input{
+	width:7%;
+	padding-left:5px;
+	border-radius:5px;
+	border:1px solid #a9a9a9;
+}
+.gylx-jisuan{
+	border-radius:0;
+	border-left: 1px solid #999;
+	border-right:1px solid #999;
+}
+.gylx-jianhao{
+	margin-bottom:10px;
+}
+.gylx-jianhao>.btn{
+	padding:2px 10px;
+}
+.size-xc>input{
+	width:30% !important;
+}
+.size-xc{
+	min-width:170px;
+}
+
+
+/* -----隔离线----- */
+.normal-table tbody tr td:nth-of-type(odd){
+	text-align: right;
+}
+.normal-table tbody tr td{
+	padding:2px;
+}
+.normal-table tbody tr td input{
+	border:1px solid #ccc;
+	padding-left:5px;
+}
+.form-control{
+	padding:3px;
+	height:26px;
+	background: #fff !important;
+	display: inline;
+}
+.input-group-addon{
+	padding:3px 6px;
+	background: #fff;
+}
+.table-toptip{
+	background-color: #5bc0de; 
+	height: 30px; 
+	line-height: 30px;
+	margin-bottom:5px;
+}
+.bootstrap-select>.btn{
+	padding:2px 5px;
+}
+
+/* -----日期区间----- */
+.self-time>input{
+	width:100px !important;
+	height:26px;
+}
+.self-time>.input-group-addon{
+	padding:2px;
+}
+
+.short-table{
+	width:395px !important;
+}
+.short-table tbody tr td input{
+	width:80% !important;
+}
+/*-------工艺路线管理table滚动条控制-------*/
+.btc-table .bootstrap-table{
+	max-height:265px;
+	overflow:auto;
+}
+
+
+/*-------卡片打印-------*/
+ .select-aaa .dd span,.select-aaa input{
+	float:left;
+}
+.asdf{
+	float:left;
+} 
+/* .select-aaa .bootstrap-select{
+	float:none !important;
+}  */
+.file-input {
+	overflow-y: hidden;
+}
+.inner {
+	max-height: 210px !important;
+}
+.spanCss{
+	/* float: left; */
+	line-height: 26px;
+}
+/* 表内容不换行 */
+table td{
+	white-space: nowrap;
+}
+/* 表字体 */
+.table{
+	font-size: 14px;
+}
+/* 表字体水平居中 */
+table tr td{
+	vertical-align: middle !important;
+}
+/* 分页及分页文字 */
+.pull-left,.pull-right{
+	font-size: 13px;
+}
+
+.back {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	opacity: 0.3;
+	background: blue;
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	border-radius: 50%;
+	line-height: 60px;
+	z-index:99;
+}
+
+.back>a {
+	color: white
+}
+
+.back:hover {
+	opacity: 1;
+}
+
+/* body {
+	font-weight: 600;
+} */
+/* 必填*颜色 */
+.requiredCss{
+	color : red;
+}
+/* 必填项输入框背景颜色 */
+.bj_color{
+	background: #dff0d8 !important;;	
+}
+/* /* 按钮和input框对齐 */
+.alignment{
+	margin-top: -5px;
+	display: inline;
+} */

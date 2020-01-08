@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper
+	namespace="com.nbst.dao.mapper.imesweb.EngineconfigMapper">
+	<resultMap id="BaseResultMap"
+		type="com.nbst.model.Engineconfig">
+		<id column="ENGINCONFIG_ID" property="yqId" jdbcType="INTEGER" />
+		<result column="MODULE_NAME" property="yqModuleName"
+			jdbcType="VARCHAR" />
+		<result column="THREADS_COUNT" property="yqThreadsCount"
+			jdbcType="INTEGER" />
+		<result column="HANDLER_TYPE" property="yqHandlerType"
+			jdbcType="INTEGER" />
+		<result column="CREATE_DATE" property="yqCreateDate"
+			jdbcType="BIGINT" />
+		<result column="CHANGED_DATE" property="yqChangedDate"
+			jdbcType="BIGINT" />
+		<result column="DELETE_DATE" property="yqDeleteDate"
+			jdbcType="BIGINT" />
+		<result column="CREATE_PEOPLE" property="yqCreatePeople"
+			jdbcType="INTEGER" />
+		<result column="CHANGE_PEOPLE" property="yqChangePeople"
+			jdbcType="INTEGER" />
+		<result column="DELETE_PEOPLE" property="yqDeletePeople"
+			jdbcType="INTEGER" />
+		<result column="yqStatus" property="yqStatus"
+			jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		ENGINCONFIG_ID, MODULE_NAME, THREADS_COUNT, HANDLER_TYPE, CREATE_DATE, CHANGED_DATE,
+		DELETE_DATE, CREATE_PEOPLE, CHANGE_PEOPLE, DELETE_PEOPLE, yqStatus
+	</sql>
+	<select id="findById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from engineconfig
+		where ENGINCONFIG_ID = #{yqId,jdbcType=INTEGER}
+	</select>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from engineconfig
+		where ENGINCONFIG_ID = #{yqId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.nbst.model.Engineconfig"
+		useGeneratedKeys="true" keyProperty="yqId">
+		insert into engineconfig
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="yqId != null">
+				ENGINCONFIG_ID,
+			</if>
+			<if test="yqModuleName != null">
+				MODULE_NAME,
+			</if>
+			<if test="yqThreadsCount != null">
+				THREADS_COUNT,
+			</if>
+			<if test="yqHandlerType != null">
+				HANDLER_TYPE,
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE,
+			</if>
+			<if test="yqChangedDate != null">
+				CHANGED_DATE,
+			</if>
+			<if test="yqDeleteDate != null">
+				DELETE_DATE,
+			</if>
+			<if test="yqCreatePeople != null">
+				CREATE_PEOPLE,
+			</if>
+			<if test="yqChangePeople != null">
+				CHANGE_PEOPLE,
+			</if>
+			<if test="yqDeletePeople != null">
+				DELETE_PEOPLE,
+			</if>
+			<if test="yqStatus != null">
+				yqStatus,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="yqId != null">
+				#{yqId,jdbcType=INTEGER},
+			</if>
+			<if test="yqModuleName != null">
+				#{yqModuleName,jdbcType=VARCHAR},
+			</if>
+			<if test="yqThreadsCount != null">
+				#{yqThreadsCount,jdbcType=INTEGER},
+			</if>
+			<if test="yqHandlerType != null">
+				#{yqHandlerType,jdbcType=INTEGER},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=BIGINT},
+			</if>
+			<if test="yqChangedDate != null">
+				#{yqChangedDate,jdbcType=BIGINT},
+			</if>
+			<if test="yqDeleteDate != null">
+				#{yqDeleteDate,jdbcType=BIGINT},
+			</if>
+			<if test="yqCreatePeople != null">
+				#{yqCreatePeople,jdbcType=INTEGER},
+			</if>
+			<if test="yqChangePeople != null">
+				#{yqChangePeople,jdbcType=INTEGER},
+			</if>
+			<if test="yqDeletePeople != null">
+				#{yqDeletePeople,jdbcType=INTEGER},
+			</if>
+			<if test="yqStatus != null">
+				#{yqStatus,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.nbst.model.Engineconfig">
+		update engineconfig
+		<set>
+			<if test="yqModuleName != null">
+				MODULE_NAME = #{yqModuleName,jdbcType=VARCHAR},
+			</if>
+			<if test="yqThreadsCount != null">
+				THREADS_COUNT = #{yqThreadsCount,jdbcType=INTEGER},
+			</if>
+			<if test="yqHandlerType != null">
+				HANDLER_TYPE = #{yqHandlerType,jdbcType=INTEGER},
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE = #{createDate,jdbcType=BIGINT},
+			</if>
+			<if test="yqChangedDate != null">
+				CHANGED_DATE = #{yqChangedDate,jdbcType=BIGINT},
+			</if>
+			<if test="yqDeleteDate != null">
+				DELETE_DATE = #{yqDeleteDate,jdbcType=BIGINT},
+			</if>
+			<if test="yqCreatePeople != null">
+				CREATE_PEOPLE = #{yqCreatePeople,jdbcType=INTEGER},
+			</if>
+			<if test="yqChangePeople != null">
+				CHANGE_PEOPLE = #{yqChangePeople,jdbcType=INTEGER},
+			</if>
+			<if test="yqDeletePeople != null">
+				DELETE_PEOPLE = #{yqDeletePeople,jdbcType=INTEGER},
+			</if>
+			<if test="yqStatus != null">
+				yqStatus = #{yqStatus,jdbcType=INTEGER},
+			</if>
+		</set>
+		where ENGINCONFIG_ID = #{yqId,jdbcType=INTEGER}
+	</update>
+
+</mapper>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="base :: header (title='测量系统页面')" />
+<link th:href="@{css/controlChart/MainPage.css}" rel="stylesheet" />
+<link th:href="@{plugins/handsontable/css/handsontable.full.css}" rel="stylesheet" />
+<link th:href="@{plugins/jquery/css/metisMenu.min.css}" rel="stylesheet" />
+
+<style>
+  .bldyA {
+    background: blue;
+    color: #fff;
+  }
+</style>
+
+<body>
+  <div class="col-md-12">
+      <div class="setting" style="display: none;">
+        <div style="height: 10px;width: 100%;"></div>
+        <div class="titlex" style="font-size:17px;margin-bottom:15px;margin-top: 5px;margin-left: 20px;">控制图设置<span
+            style="float:right;margin-right:20px;height:25px;"><button class="btn btn-default"
+              style="height:25px;outline:none;" onclick="show_other()">其他信息</button></span></div>
+        <div style="border-bottom:2.5px solid #eff0f4;"></div>
+        <div class="setting_up" style="width:100%;">
+          <div class="setting_index" style="width:100%;">
+            <div style="width:100%;">
+              <table style="width:100%;">
+                <tr>
+                  <td><span>控制图编号:</span>&nbsp;&nbsp;&nbsp;<input type="text"
+                      style="width: 35%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;" id="kztbh"
+                      onkeyup="this.value=this.value.replace(/[^\0-9\u4E00-\u9FA5\-]/g,'')"
+                      placeholder="请输入编号" /><button class="btn btn-default"
+                      style="width:75px;height:25px;outline:none;display:none;margin:0 0 2px 5px;" id="zdsc"
+                      onclick="auto_create()">生成编号</button></td>
+                  <td><span>控制图类型:</span>&nbsp;&nbsp;&nbsp;
+                    
+                    <select id="kztlx" name="kztlx" class="selectpicker form-control" data-live-search="false"
+                      data-width="35%" data-height="25px"
+                      style="height:25px;display:inline-block;border-radius:4px;border:1px solid #c2c2c2;outline:none;"
+                      onchange="add_readonly()">
+                      <option value="">请选择控制图类型</option>
+                      <option value="1">XR</option>
+                      <!-- <option value="4" >P</option> -->
+                      <option value="5">nP</option>
+                    </select>
+                  </td>
+                  <td><span>检测项目:</span>&nbsp;&nbsp;&nbsp;
+                    <!-- <select id="testProject" name="testProject" style="width:35%;height:25px;display:inline-block;outline:none;border-radius:4px;border:1px solid #c2c2c2;"></select> -->
+                    <select id="testProject" name="testProject" class="selectpicker form-control"
+                      data-live-search="false" data-width="35%" data-height="25px"
+                      style="height:25px;display:inline-block;outline:none;border-radius:4px;border:1px solid #c2c2c2;outline:none;">
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="setting_info">
+            <div class="setting_info_left">
+              <div class="setting_info_left_in">
+                <span class="titlex" style="font-size: 16px;">基本信息</span>
+                <table style="margin-top:10px;" id="jbxx">
+                  <tr>
+                    <td>规格上限：</td>
+                    <td><input type="text" id="ggsx"
+                        style="width:130%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onblur="onblus(this.value,this.id)" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>目标值：</td>
+                    <td><input type="text" id="mbz"
+                        style="width:130%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onblur="onblus(this.value,this.id)" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>规格下限：</td>
+                    <td><input type="text" id="ggxx"
+                        style="width:130%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onblur="onblus(this.value,this.id)" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>样本容量：</td>
+                    <td>
+                      <!-- data-width="160px"	 --><select id="ybrl" class="selectpicker form-control"
+                        data-live-search="false" data-width="130%" data-height="25px"
+                        style="width:130%;height:25px;outline:none;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option selected="selected" value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                      </select>
+
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>小数位数：</td>
+                    <td>
+                      <select id="xsws" onchange="xsws_update()" class="selectpicker form-control"
+                        data-live-search="false" data-width="130%" data-height="25px"
+                        style="height:25px;outline:none;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+
+
+                      <!-- <select id="xsws" onchange="xsws_update()" style="width:130%;height:25px;outline:none;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;">
+																	<option value="0">0</option>
+																	<option value="1">1</option>
+																	<option value="2">2</option>
+																	<option selected="selected" value="3">3</option>
+																	<option value="4">4</option>
+																	<option value="5">5</option>
+																	<option value="6">6</option>																	
+																</select> -->
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="setting_xx">
+              <div class="setting_xx_in">
+                <span class="titlex" style="font-size: 16px;">控制图信息</span>
+                <div class="table_up" style="border-bottom:1px solid #eff0f4">
+                  <table style="width:100%;margin-top:10px;margin-bottom:10px;">
+                    <tr>
+                      <td style=" width: 17%;">判异规则：</td>
+                      <td colspan="3"><input type="text"
+                          style="width: 81.2%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                          id="pygz" readonly="true" /><button class="btn btn-default" onclick="setting_ypgz_add()"
+                          style="margin-left:3%;outline:none;" id="pygz_set">设置</button></td>
+                    </tr>
+                    <tr>
+                      <td style=" width: 17%;">控制图层次信息：</td>
+                      <td colspan="3"><input type="text"
+                          style="width: 81.2%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                          id="kztccxx" readonly="true" /><button class="btn btn-default" onclick="setting_kztccxx_add()"
+                          style="margin-left:3%;outline:none;">设置</button></td>
+                    </tr>
+                    <tr>
+                      <td style=" width: 17%;">数据点层次信息：</td>
+                      <td colspan="3"><input type="text"
+                          style="width: 81.2%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                          id="sjdccxx" readonly="true" /><button class="btn btn-default" onclick="setting_sjdccxx_add()"
+                          style="margin-left:3%;outline:none;">设置</button></td>
+                    </tr>
+                  </table>
+                </div>
+                <table style="margin-top:8px;">
+                  <tr>
+                    <td style=" width: 19%;"></td>
+                    <td>上控制限</td>
+                    <td>目标值</td>
+                    <td>下控制限</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td style=" width: 17%;">上图：</td>
+                    <td><input style="width: 100%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        id="stskzx" /></td>
+                    <td><input style="width: 100%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        id="stmbz" /></td>
+                    <td><input style="width: 100%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        id="stxkzx" /></td>
+                    <td style="padding:8px 8px 8px 13px;"><button class="btn btn-default" style="outline:none;"
+                        onclick="calculate()" id="jisuan">计算</button></td>
+                  </tr>
+                  <tr>
+                    <td style=" width: 17%;">下图：</td>
+                    <td><input style="width: 100%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        id="xtskzx" /></td>
+                    <td><input style="width: 100%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        id="xtmbz" /></td>
+                    <td><input style="width: 100%;height:25px;border-radius:4px;border:1px solid #c2c2c2;padding: 3px;"
+                        id="xtxkzx" /></td>
+                    <td style="padding:8px 8px 8px 13px;"><button class="btn btn-default" style="outline:none;"
+                        onclick="clear_Calculate()" id="qingchu">清除</button></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="setting_down" style="width:100%;margin-top:420px;">
+          <div class="setting_btn">
+            <button class="btn btn-default" onclick="setting_save()"
+              style="width:60px;height:30px;outline:none;">保存</button>
+            <button class="btn btn-default" onclick="setting_back()"
+              style="width:60px;height:30px;outline:none;">返回</button>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+
+
+
+
+
+</body>
+<div th:include="base :: bottom" />
+<!-- <div th:include="base :: bootstrapTablez" /> -->
+<div th:include="base :: bootstrapTable" />
+<div th:include="base :: tableExport" />
+<div th:include="base :: showBo" />
+<div th:include="base :: toastr" />
+<div th:include="base :: ztree" />
+
+<script th:src="@{plugins/jquery/js/jquery.contextify2.js}"></script>
+<script th:src="@{plugins/handsontable/js/handsontable.full.js}"></script>
+
+<script th:src="@{plugins/bootstrap/js/bootstrap-table-resizable.js}"></script><!-- 列可拉伸相关JS -->
+<script th:src="@{plugins/bootstrap/js/colResizable-1.6.min.js}"></script>
+
+<script th:src="@{plugins/handsontable/js/sheetclip.js}"></script>
+<script th:src="@{plugins/jquery/js/metisMenu.min.js}"></script>
+<script th:src="@{js/MainPage.js}"></script>
+<script th:src="@{js/MainPageAdd.js}"></script>
+
+
+
+</html>

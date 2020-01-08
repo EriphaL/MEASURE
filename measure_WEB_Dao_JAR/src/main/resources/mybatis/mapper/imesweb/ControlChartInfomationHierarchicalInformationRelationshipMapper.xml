@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.nbst.dao.mapper.imesweb.ControlChartInfomationHierarchicalInformationRelationshipMapper">
+	<resultMap id="BaseResultMap"
+		type="com.nbst.model.ControlChartInfomationHierarchicalInformationRelationship">
+		<id column="KZTXXCCGL_ID" property="kztxxccglId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_CONTROL_CHART_ID"
+			property="kztxxccglControlChartId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_ONE_ID"
+			property="kztxxccglTypeLevelOneId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_ONE_STATE"
+			property="kztxxccglTypeLevelOneState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_TWO_ID"
+			property="kztxxccglTypeLevelTwoId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_TWO_STATE"
+			property="kztxxccglTypeLevelTwoState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_THREE_ID"
+			property="kztxxccglTypeLevelThreeId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_THREE_STATE"
+			property="kztxxccglTypeLevelThreeState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_FOUR_ID"
+			property="kztxxccglTypeLevelFourId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_FOUR_STATE"
+			property="kztxxccglTypeLevelFourState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_FIVE_ID"
+			property="kztxxccglTypeLevelFiveId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_FIVE_STATE"
+			property="kztxxccglTypeLevelFiveState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_SIX_ID"
+			property="kztxxccglTypeLevelSixId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_SIX_STATE"
+			property="kztxxccglTypeLevelSixState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_SEVEN_ID"
+			property="kztxxccglTypeLevelSevenId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE"
+			property="kztxxccglTypeLevelSevenState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_EIGHT_ID"
+			property="kztxxccglTypeLevelEightId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE"
+			property="kztxxccglTypeLevelEightState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_NINE_ID"
+			property="kztxxccglTypeLevelNineId" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_TYPE_LEVEL_NINE_STATE"
+			property="kztxxccglTypeLevelNineState" jdbcType="INTEGER" />
+		<result column="KZTXXCCGL_EXTEND1" property="kztxxccglExtend1"
+			jdbcType="VARCHAR" />
+		<result column="KZTXXCCGL_EXTEND2" property="kztxxccglExtend2"
+			jdbcType="VARCHAR" />
+		<result column="KZTXXCCGL_EXTEND3" property="kztxxccglExtend3"
+			jdbcType="VARCHAR" />
+		<result column="KZTXXCCGL_EXTEND4" property="kztxxccglExtend4"
+			jdbcType="VARCHAR" />
+		<result column="KZTXXCCGL_EXTEND5" property="kztxxccglExtend5"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		KZTXXCCGL_ID, KZTXXCCGL_CONTROL_CHART_ID,
+		KZTXXCCGL_TYPE_LEVEL_ONE_ID,
+		KZTXXCCGL_TYPE_LEVEL_ONE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_TWO_ID, KZTXXCCGL_TYPE_LEVEL_TWO_STATE,
+		KZTXXCCGL_TYPE_LEVEL_THREE_ID,
+		KZTXXCCGL_TYPE_LEVEL_THREE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_FOUR_ID,
+		KZTXXCCGL_TYPE_LEVEL_FOUR_STATE,
+		KZTXXCCGL_TYPE_LEVEL_FIVE_ID, KZTXXCCGL_TYPE_LEVEL_FIVE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_SIX_ID,
+		KZTXXCCGL_TYPE_LEVEL_SIX_STATE,
+		KZTXXCCGL_TYPE_LEVEL_SEVEN_ID,
+		KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE,
+		KZTXXCCGL_TYPE_LEVEL_EIGHT_ID, KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE,
+		KZTXXCCGL_TYPE_LEVEL_NINE_ID,
+		KZTXXCCGL_TYPE_LEVEL_NINE_STATE,
+		KZTXXCCGL_EXTEND1, KZTXXCCGL_EXTEND2,
+		KZTXXCCGL_EXTEND3,
+		KZTXXCCGL_EXTEND4, KZTXXCCGL_EXTEND5
+	</sql>
+	<select id="findById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from control_chart_infomation_hierarchical_information_relationship
+		where KZTXXCCGL_ID = #{kztxxccglId,jdbcType=INTEGER}
+	</select>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from
+		control_chart_infomation_hierarchical_information_relationship
+		where
+		KZTXXCCGL_ID = #{kztxxccglId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert"
+		parameterType="com.nbst.model.ControlChartInfomationHierarchicalInformationRelationship"
+		useGeneratedKeys="true" keyProperty="kztxxccglId">
+		insert into
+		control_chart_infomation_hierarchical_information_relationship
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="kztxxccglId != null">
+				KZTXXCCGL_ID,
+			</if>
+			<if test="kztxxccglControlChartId != null">
+				KZTXXCCGL_CONTROL_CHART_ID,
+			</if>
+			<if test="kztxxccglTypeLevelOneId != null">
+				KZTXXCCGL_TYPE_LEVEL_ONE_ID,
+			</if>
+			<if test="kztxxccglTypeLevelOneState != null">
+				KZTXXCCGL_TYPE_LEVEL_ONE_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelTwoId != null">
+				KZTXXCCGL_TYPE_LEVEL_TWO_ID,
+			</if>
+			<if test="kztxxccglTypeLevelTwoState != null">
+				KZTXXCCGL_TYPE_LEVEL_TWO_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelThreeId != null">
+				KZTXXCCGL_TYPE_LEVEL_THREE_ID,
+			</if>
+			<if test="kztxxccglTypeLevelThreeState != null">
+				KZTXXCCGL_TYPE_LEVEL_THREE_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelFourId != null">
+				KZTXXCCGL_TYPE_LEVEL_FOUR_ID,
+			</if>
+			<if test="kztxxccglTypeLevelFourState != null">
+				KZTXXCCGL_TYPE_LEVEL_FOUR_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelFiveId != null">
+				KZTXXCCGL_TYPE_LEVEL_FIVE_ID,
+			</if>
+			<if test="kztxxccglTypeLevelFiveState != null">
+				KZTXXCCGL_TYPE_LEVEL_FIVE_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelSixId != null">
+				KZTXXCCGL_TYPE_LEVEL_SIX_ID,
+			</if>
+			<if test="kztxxccglTypeLevelSixState != null">
+				KZTXXCCGL_TYPE_LEVEL_SIX_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelSevenId != null">
+				KZTXXCCGL_TYPE_LEVEL_SEVEN_ID,
+			</if>
+			<if test="kztxxccglTypeLevelSevenState != null">
+				KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelEightId != null">
+				KZTXXCCGL_TYPE_LEVEL_EIGHT_ID,
+			</if>
+			<if test="kztxxccglTypeLevelEightState != null">
+				KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE,
+			</if>
+			<if test="kztxxccglTypeLevelNineId != null">
+				KZTXXCCGL_TYPE_LEVEL_NINE_ID,
+			</if>
+			<if test="kztxxccglTypeLevelNineState != null">
+				KZTXXCCGL_TYPE_LEVEL_NINE_STATE,
+			</if>
+			<if test="kztxxccglExtend1 != null">
+				KZTXXCCGL_EXTEND1,
+			</if>
+			<if test="kztxxccglExtend2 != null">
+				KZTXXCCGL_EXTEND2,
+			</if>
+			<if test="kztxxccglExtend3 != null">
+				KZTXXCCGL_EXTEND3,
+			</if>
+			<if test="kztxxccglExtend4 != null">
+				KZTXXCCGL_EXTEND4,
+			</if>
+			<if test="kztxxccglExtend5 != null">
+				KZTXXCCGL_EXTEND5,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="kztxxccglId != null">
+				#{kztxxccglId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglControlChartId != null">
+				#{kztxxccglControlChartId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelOneId != null">
+				#{kztxxccglTypeLevelOneId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelOneState != null">
+				#{kztxxccglTypeLevelOneState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelTwoId != null">
+				#{kztxxccglTypeLevelTwoId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelTwoState != null">
+				#{kztxxccglTypeLevelTwoState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelThreeId != null">
+				#{kztxxccglTypeLevelThreeId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelThreeState != null">
+				#{kztxxccglTypeLevelThreeState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFourId != null">
+				#{kztxxccglTypeLevelFourId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFourState != null">
+				#{kztxxccglTypeLevelFourState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFiveId != null">
+				#{kztxxccglTypeLevelFiveId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFiveState != null">
+				#{kztxxccglTypeLevelFiveState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSixId != null">
+				#{kztxxccglTypeLevelSixId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSixState != null">
+				#{kztxxccglTypeLevelSixState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSevenId != null">
+				#{kztxxccglTypeLevelSevenId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSevenState != null">
+				#{kztxxccglTypeLevelSevenState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelEightId != null">
+				#{kztxxccglTypeLevelEightId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelEightState != null">
+				#{kztxxccglTypeLevelEightState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelNineId != null">
+				#{kztxxccglTypeLevelNineId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelNineState != null">
+				#{kztxxccglTypeLevelNineState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglExtend1 != null">
+				#{kztxxccglExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend2 != null">
+				#{kztxxccglExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend3 != null">
+				#{kztxxccglExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend4 != null">
+				#{kztxxccglExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend5 != null">
+				#{kztxxccglExtend5,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update"
+		parameterType="com.nbst.model.ControlChartInfomationHierarchicalInformationRelationship">
+		update control_chart_infomation_hierarchical_information_relationship
+		<set>
+			<if test="kztxxccglControlChartId != null">
+				KZTXXCCGL_CONTROL_CHART_ID =
+				#{kztxxccglControlChartId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelOneId != null">
+				KZTXXCCGL_TYPE_LEVEL_ONE_ID =
+				#{kztxxccglTypeLevelOneId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelOneState != null">
+				KZTXXCCGL_TYPE_LEVEL_ONE_STATE =
+				#{kztxxccglTypeLevelOneState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelTwoId != null">
+				KZTXXCCGL_TYPE_LEVEL_TWO_ID =
+				#{kztxxccglTypeLevelTwoId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelTwoState != null">
+				KZTXXCCGL_TYPE_LEVEL_TWO_STATE =
+				#{kztxxccglTypeLevelTwoState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelThreeId != null">
+				KZTXXCCGL_TYPE_LEVEL_THREE_ID =
+				#{kztxxccglTypeLevelThreeId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelThreeState != null">
+				KZTXXCCGL_TYPE_LEVEL_THREE_STATE =
+				#{kztxxccglTypeLevelThreeState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFourId != null">
+				KZTXXCCGL_TYPE_LEVEL_FOUR_ID =
+				#{kztxxccglTypeLevelFourId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFourState != null">
+				KZTXXCCGL_TYPE_LEVEL_FOUR_STATE =
+				#{kztxxccglTypeLevelFourState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFiveId != null">
+				KZTXXCCGL_TYPE_LEVEL_FIVE_ID =
+				#{kztxxccglTypeLevelFiveId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelFiveState != null">
+				KZTXXCCGL_TYPE_LEVEL_FIVE_STATE =
+				#{kztxxccglTypeLevelFiveState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSixId != null">
+				KZTXXCCGL_TYPE_LEVEL_SIX_ID =
+				#{kztxxccglTypeLevelSixId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSixState != null">
+				KZTXXCCGL_TYPE_LEVEL_SIX_STATE =
+				#{kztxxccglTypeLevelSixState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSevenId != null">
+				KZTXXCCGL_TYPE_LEVEL_SEVEN_ID =
+				#{kztxxccglTypeLevelSevenId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelSevenState != null">
+				KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE =
+				#{kztxxccglTypeLevelSevenState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelEightId != null">
+				KZTXXCCGL_TYPE_LEVEL_EIGHT_ID =
+				#{kztxxccglTypeLevelEightId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelEightState != null">
+				KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE =
+				#{kztxxccglTypeLevelEightState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelNineId != null">
+				KZTXXCCGL_TYPE_LEVEL_NINE_ID =
+				#{kztxxccglTypeLevelNineId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglTypeLevelNineState != null">
+				KZTXXCCGL_TYPE_LEVEL_NINE_STATE =
+				#{kztxxccglTypeLevelNineState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxccglExtend1 != null">
+				KZTXXCCGL_EXTEND1 = #{kztxxccglExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend2 != null">
+				KZTXXCCGL_EXTEND2 = #{kztxxccglExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend3 != null">
+				KZTXXCCGL_EXTEND3 = #{kztxxccglExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend4 != null">
+				KZTXXCCGL_EXTEND4 = #{kztxxccglExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxccglExtend5 != null">
+				KZTXXCCGL_EXTEND5 = #{kztxxccglExtend5,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where KZTXXCCGL_ID = #{kztxxccglId,jdbcType=INTEGER}
+	</update>
+	<select id="findByCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from control_chart_infomation_hierarchical_information_relationship
+		where 1=1
+		<if test="kztxxccglControlChartId != null">
+			and KZTXXCCGL_CONTROL_CHART_ID =
+			#{kztxxccglControlChartId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelOneId != null">
+			and KZTXXCCGL_TYPE_LEVEL_ONE_ID =
+			#{kztxxccglTypeLevelOneId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelOneState != null">
+			and KZTXXCCGL_TYPE_LEVEL_ONE_STATE =
+			#{kztxxccglTypeLevelOneState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelTwoId != null">
+			and KZTXXCCGL_TYPE_LEVEL_TWO_ID =
+			#{kztxxccglTypeLevelTwoId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelTwoState != null">
+			and KZTXXCCGL_TYPE_LEVEL_TWO_STATE =
+			#{kztxxccglTypeLevelTwoState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelThreeId != null">
+			and KZTXXCCGL_TYPE_LEVEL_THREE_ID =
+			#{kztxxccglTypeLevelThreeId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelThreeState != null">
+			and KZTXXCCGL_TYPE_LEVEL_THREE_STATE =
+			#{kztxxccglTypeLevelThreeState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFourId != null">
+			and KZTXXCCGL_TYPE_LEVEL_FOUR_ID =
+			#{kztxxccglTypeLevelFourId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFourState != null">
+			and KZTXXCCGL_TYPE_LEVEL_FOUR_STATE =
+			#{kztxxccglTypeLevelFourState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFiveId != null">
+			and KZTXXCCGL_TYPE_LEVEL_FIVE_ID =
+			#{kztxxccglTypeLevelFiveId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFiveState != null">
+			and KZTXXCCGL_TYPE_LEVEL_FIVE_STATE =
+			#{kztxxccglTypeLevelFiveState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSixId != null">
+			and KZTXXCCGL_TYPE_LEVEL_SIX_ID =
+			#{kztxxccglTypeLevelSixId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSixState != null">
+			and KZTXXCCGL_TYPE_LEVEL_SIX_STATE =
+			#{kztxxccglTypeLevelSixState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSevenId != null">
+			and KZTXXCCGL_TYPE_LEVEL_SEVEN_ID =
+			#{kztxxccglTypeLevelSevenId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSevenState != null">
+			and KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE =
+			#{kztxxccglTypeLevelSevenState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelEightId != null">
+			and KZTXXCCGL_TYPE_LEVEL_EIGHT_ID =
+			#{kztxxccglTypeLevelEightId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelEightState != null">
+			and KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE =
+			#{kztxxccglTypeLevelEightState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelNineId != null">
+			and KZTXXCCGL_TYPE_LEVEL_NINE_ID =
+			#{kztxxccglTypeLevelNineId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelNineState != null">
+			and KZTXXCCGL_TYPE_LEVEL_NINE_STATE =
+			#{kztxxccglTypeLevelNineState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglExtend1 != null">
+			and KZTXXCCGL_EXTEND1 =
+			#{kztxxccglExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend2 != null">
+			and KZTXXCCGL_EXTEND2 =
+			#{kztxxccglExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend3 != null">
+			and KZTXXCCGL_EXTEND3 =
+			#{kztxxccglExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend4 != null">
+			and KZTXXCCGL_EXTEND4 =
+			#{kztxxccglExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend5 != null">
+			and KZTXXCCGL_EXTEND5 =
+			#{kztxxccglExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="count" resultType="java.lang.Integer"
+		parameterType="Map">
+		select count(*) from
+		control_chart_infomation_hierarchical_information_relationship
+		where
+		1=1
+		<if test="kztxxccglControlChartId != null">
+			and KZTXXCCGL_CONTROL_CHART_ID =
+			#{kztxxccglControlChartId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelOneId != null">
+			and KZTXXCCGL_TYPE_LEVEL_ONE_ID =
+			#{kztxxccglTypeLevelOneId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelOneState != null">
+			and KZTXXCCGL_TYPE_LEVEL_ONE_STATE =
+			#{kztxxccglTypeLevelOneState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelTwoId != null">
+			and KZTXXCCGL_TYPE_LEVEL_TWO_ID =
+			#{kztxxccglTypeLevelTwoId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelTwoState != null">
+			and KZTXXCCGL_TYPE_LEVEL_TWO_STATE =
+			#{kztxxccglTypeLevelTwoState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelThreeId != null">
+			and KZTXXCCGL_TYPE_LEVEL_THREE_ID =
+			#{kztxxccglTypeLevelThreeId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelThreeState != null">
+			and KZTXXCCGL_TYPE_LEVEL_THREE_STATE =
+			#{kztxxccglTypeLevelThreeState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFourId != null">
+			and KZTXXCCGL_TYPE_LEVEL_FOUR_ID =
+			#{kztxxccglTypeLevelFourId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFourState != null">
+			and KZTXXCCGL_TYPE_LEVEL_FOUR_STATE =
+			#{kztxxccglTypeLevelFourState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFiveId != null">
+			and KZTXXCCGL_TYPE_LEVEL_FIVE_ID =
+			#{kztxxccglTypeLevelFiveId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelFiveState != null">
+			and KZTXXCCGL_TYPE_LEVEL_FIVE_STATE =
+			#{kztxxccglTypeLevelFiveState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSixId != null">
+			and KZTXXCCGL_TYPE_LEVEL_SIX_ID =
+			#{kztxxccglTypeLevelSixId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSixState != null">
+			and KZTXXCCGL_TYPE_LEVEL_SIX_STATE =
+			#{kztxxccglTypeLevelSixState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSevenId != null">
+			and KZTXXCCGL_TYPE_LEVEL_SEVEN_ID =
+			#{kztxxccglTypeLevelSevenId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelSevenState != null">
+			and KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE =
+			#{kztxxccglTypeLevelSevenState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelEightId != null">
+			and KZTXXCCGL_TYPE_LEVEL_EIGHT_ID =
+			#{kztxxccglTypeLevelEightId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelEightState != null">
+			and KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE =
+			#{kztxxccglTypeLevelEightState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelNineId != null">
+			and KZTXXCCGL_TYPE_LEVEL_NINE_ID =
+			#{kztxxccglTypeLevelNineId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglTypeLevelNineState != null">
+			and KZTXXCCGL_TYPE_LEVEL_NINE_STATE =
+			#{kztxxccglTypeLevelNineState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxccglExtend1 != null">
+			and KZTXXCCGL_EXTEND1 =
+			#{kztxxccglExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend2 != null">
+			and KZTXXCCGL_EXTEND2 =
+			#{kztxxccglExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend3 != null">
+			and KZTXXCCGL_EXTEND3 =
+			#{kztxxccglExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend4 != null">
+			and KZTXXCCGL_EXTEND4 =
+			#{kztxxccglExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxccglExtend5 != null">
+			and KZTXXCCGL_EXTEND5 =
+			#{kztxxccglExtend5,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<select id="getLevels" resultType="Map"
+		parameterType="java.lang.Integer">
+		SELECT c.KZTXXCCGL_TYPE_LEVEL_ONE_STATE state1,l1.CCLXONE_ID
+		id1,l1.CCLXONE_NAME value1,
+		c.KZTXXCCGL_TYPE_LEVEL_TWO_STATE state2,l2.CCLXTWO_ID id2,l2.CCLXTWO_NAME value2,
+		c.KZTXXCCGL_TYPE_LEVEL_THREE_STATE state3,l3.CCLXTHREE_ID
+		id3,l3.CCLXTHREE_NAME value3,
+		c.KZTXXCCGL_TYPE_LEVEL_FOUR_STATE state4,l4.CCLXFOUR_ID id4,l4.CCLXFOUR_NAME value4,
+		c.KZTXXCCGL_TYPE_LEVEL_FIVE_STATE state5,l5.CCLXFIVE_ID
+		id5,l5.CCLXFIVE_NAME value5,
+		c.KZTXXCCGL_TYPE_LEVEL_SIX_STATE state6,l6.CCLXSIX_ID id6,l6.CCLXSIX_NAME value6,
+		c.KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE state7,l7.CCLXSEVEN_ID
+		id7,l7.CCLXSEVEN_NAME value7,
+		c.KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE state8,l8.CCLXEIGHT_ID id8,l8.CCLXEIGHT_NAME value8,
+		c.KZTXXCCGL_TYPE_LEVEL_NINE_STATE state9,l9.CCLXNINE_ID
+		id9,l9.CCLXNINE_NAME value9
+		from
+		control_chart_infomation_hierarchical_information_relationship c
+		LEFT JOIN type_level_one l1 on c.KZTXXCCGL_TYPE_LEVEL_ONE_ID=l1.CCLXONE_ID
+		LEFT JOIN type_level_two l2 on
+		c.KZTXXCCGL_TYPE_LEVEL_TWO_ID=l2.CCLXTWO_ID
+		LEFT JOIN type_level_three l3 on
+		c.KZTXXCCGL_TYPE_LEVEL_THREE_ID=l3.CCLXTHREE_ID
+		LEFT JOIN type_level_four l4 on
+		c.KZTXXCCGL_TYPE_LEVEL_FOUR_ID=l4.CCLXFOUR_ID
+		LEFT JOIN type_level_five l5 on
+		c.KZTXXCCGL_TYPE_LEVEL_FIVE_ID=l5.CCLXFIVE_ID
+		LEFT JOIN type_level_six l6 on c.KZTXXCCGL_TYPE_LEVEL_SIX_ID=l6.CCLXSIX_ID
+		LEFT JOIN type_level_seven l7 on
+		c.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID=l7.CCLXSEVEN_ID
+		LEFT JOIN type_level_eight l8 on
+		c.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID=l8.CCLXEIGHT_ID
+		LEFT JOIN type_level_nine l9 on
+		c.KZTXXCCGL_TYPE_LEVEL_NINE_ID=l9.CCLXNINE_ID
+		where KZTXXCCGL_CONTROL_CHART_ID=#{kztxxccglControlChartId,jdbcType=INTEGER}
+	</select>
+	<select id="getGlIdByChartId" resultType="java.lang.Integer"
+		parameterType="java.lang.Integer">
+		select KZTXXCCGL_ID from control_chart_infomation_hierarchical_information_relationship
+		where KZTXXCCGL_CONTROL_CHART_ID = #{kztxxccglControlChartId,jdbcType=INTEGER}
+	</select>
+	<insert id="copeByControlChartId" parameterType="map">
+		insert into control_chart_infomation_hierarchical_information_relationship
+		(KZTXXCCGL_CONTROL_CHART_ID,
+		KZTXXCCGL_TYPE_LEVEL_ONE_ID,
+		KZTXXCCGL_TYPE_LEVEL_ONE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_TWO_ID, KZTXXCCGL_TYPE_LEVEL_TWO_STATE,
+		KZTXXCCGL_TYPE_LEVEL_THREE_ID,
+		KZTXXCCGL_TYPE_LEVEL_THREE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_FOUR_ID,
+		KZTXXCCGL_TYPE_LEVEL_FOUR_STATE,
+		KZTXXCCGL_TYPE_LEVEL_FIVE_ID, KZTXXCCGL_TYPE_LEVEL_FIVE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_SIX_ID,
+		KZTXXCCGL_TYPE_LEVEL_SIX_STATE,
+		KZTXXCCGL_TYPE_LEVEL_SEVEN_ID,
+		KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE,
+		KZTXXCCGL_TYPE_LEVEL_EIGHT_ID, KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE,
+		KZTXXCCGL_TYPE_LEVEL_NINE_ID,
+		KZTXXCCGL_TYPE_LEVEL_NINE_STATE,
+		KZTXXCCGL_EXTEND1, KZTXXCCGL_EXTEND2,
+		KZTXXCCGL_EXTEND3,
+		KZTXXCCGL_EXTEND4, KZTXXCCGL_EXTEND5)
+		select 
+		replace(KZTXXCCGL_CONTROL_CHART_ID,KZTXXCCGL_CONTROL_CHART_ID,#{newId,jdbcType=INTEGER}),
+		KZTXXCCGL_TYPE_LEVEL_ONE_ID,
+		KZTXXCCGL_TYPE_LEVEL_ONE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_TWO_ID, KZTXXCCGL_TYPE_LEVEL_TWO_STATE,
+		KZTXXCCGL_TYPE_LEVEL_THREE_ID,
+		KZTXXCCGL_TYPE_LEVEL_THREE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_FOUR_ID,
+		KZTXXCCGL_TYPE_LEVEL_FOUR_STATE,
+		KZTXXCCGL_TYPE_LEVEL_FIVE_ID, KZTXXCCGL_TYPE_LEVEL_FIVE_STATE,
+		KZTXXCCGL_TYPE_LEVEL_SIX_ID,
+		KZTXXCCGL_TYPE_LEVEL_SIX_STATE,
+		KZTXXCCGL_TYPE_LEVEL_SEVEN_ID,
+		KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE,
+		KZTXXCCGL_TYPE_LEVEL_EIGHT_ID, KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE,
+		KZTXXCCGL_TYPE_LEVEL_NINE_ID,
+		KZTXXCCGL_TYPE_LEVEL_NINE_STATE,
+		KZTXXCCGL_EXTEND1, KZTXXCCGL_EXTEND2,
+		KZTXXCCGL_EXTEND3,
+		KZTXXCCGL_EXTEND4, KZTXXCCGL_EXTEND5
+		from control_chart_infomation_hierarchical_information_relationship
+		where KZTXXCCGL_CONTROL_CHART_ID = #{Id,jdbcType=INTEGER}
+	</insert>
+</mapper>

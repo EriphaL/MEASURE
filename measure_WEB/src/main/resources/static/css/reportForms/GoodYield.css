@@ -1,0 +1,145 @@
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow-y: hidden;
+}
+
+.table {table-layout:fixed;}
+.container-fluid{
+	height: 100%;
+	width: 100%;
+	background: #EFF0F4;
+    border-radius: 5px;
+    padding: 25px 15px;
+}
+.container-fluid>div{
+	background: #EFF0F4；
+	height: 100%;
+	width: 100%;
+	padding: 15px 20px;
+	border-radius: 5px;
+}
+.btn{
+	border-radius: 5px;
+    padding: 0px 8px;
+   /*  color:white; */
+    width:60px;
+    height:25px;
+    line-height:25px;
+    font-size: 14px;
+}
+.rightdiv_head{
+	margin-bottom: 10px;
+	line-height: 25px;
+}
+.titlex{
+	border-left: 3px solid #22b7b5;
+	padding-left: 8px;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+
+.table_d1{
+	border:1px solid #eff0f4;
+	border-radius:8px;
+	padding:10px;
+	width:500px;
+}
+
+.table_d1 table tr td{
+	padding:3px 40px;
+}
+
+.table_d1 table tr td:nth-child(1){
+	padding:3px 40px 3px 20px;
+}
+
+.table_d2{
+	border:1px solid #eff0f4;
+	border-radius:8px;
+	padding:10px;
+	/* width:70%; */
+}
+.table_d2 table tr td{
+	padding:3px;
+}
+.table_d2 table tr td:nth-child(1){
+	width: 100px;
+}
+.table_d2 table tr td:nth-child(2) select{
+	width: 100%;
+	border-radius:4px;
+	border: 1px solid #c9c9c9;
+}
+.table_d2 table tr td:nth-child(3) select{
+	width: 100%;
+	border-radius:4px;
+	border: 1px solid #c9c9c9;
+}
+
+
+.table_d3{
+	/* border:1px solid #eff0f4; */
+	/* border-radius:8px; */
+	padding:10px;
+	height:240px;
+	/* width:70%; */
+}
+
+#kzt_total>div>p{
+	margin:0 0 3px 0;
+}
+
+.modal-header{
+	background:white;
+	border-bottom:1px solid #eff0f4;
+	color:black;
+	font-weight:bold;
+}
+
+.button_box button{
+	width:60px;
+	height:30px;
+}
+
+.activex{
+	background:#22b7b5;
+	color:white;
+	border: none;
+}
+.btnQ.btn-default:hover, .btnQ.btn-default:focus, .btnQ.btn-default:active, .btnQ.btn-default.active{
+    background: #22b7b5;
+    color: white;
+    border: none;
+}
+#table tbody > tr > td{
+	padding: 7px !important;
+}
+.btnT.btn-default:hover, .btnT.btn-default:active{
+    background: #22b7b5;
+    color: white;
+    border: 1px solid #22b7b5;
+}
+input,button,.btn{
+	outline:none;
+}
+
+
+#menu{
+	height: 250px;
+	overflow: auto;
+}
+
+.checkBtn{
+	position: absolute;top: 90px;right:19px;width:105px;
+}
+.checkBtn button:nth-child(1){
+	margin-bottom: 10px;
+}
+.btn-default[disabled]{
+	background-color: #b9b9b9;
+}
+
+.export>.btn{
+	height: 30px!important;
+}

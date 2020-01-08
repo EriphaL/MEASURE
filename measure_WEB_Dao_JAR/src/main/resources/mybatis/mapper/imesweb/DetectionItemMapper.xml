@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nbst.dao.mapper.imesweb.DetectionItemMapper">
+	<resultMap id="BaseResultMap" type="com.nbst.model.DetectionItem">
+		<id column="JCXM_ID" property="jcxmId" jdbcType="INTEGER" />
+		<result column="JCXM_NAME" property="jcxmName" jdbcType="VARCHAR" />
+		<result column="JCXM_CODE" property="jcxmCode" jdbcType="VARCHAR" />
+		<result column="JCXM_EXTEND1" property="jcxmExtend1" jdbcType="VARCHAR" />
+		<result column="JCXM_EXTEND2" property="jcxmExtend2" jdbcType="VARCHAR" />
+		<result column="JCXM_EXTEND3" property="jcxmExtend3" jdbcType="VARCHAR" />
+		<result column="JCXM_EXTEND4" property="jcxmExtend4" jdbcType="VARCHAR" />
+		<result column="JCXM_EXTEND5" property="jcxmExtend5" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		JCXM_ID, JCXM_NAME, JCXM_CODE, JCXM_EXTEND1, JCXM_EXTEND2,
+		JCXM_EXTEND3, JCXM_EXTEND4, JCXM_EXTEND5
+	</sql>
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from detection_item
+		where JCXM_ID = #{jcxmId,jdbcType=INTEGER}
+	</select>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from detection_item
+		where JCXM_ID = #{jcxmId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.nbst.model.DetectionItem"
+		useGeneratedKeys="true" keyProperty="jcxmId">
+		insert into detection_item
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jcxmId != null">
+				JCXM_ID,
+			</if>
+			<if test="jcxmName != null">
+				JCXM_NAME,
+			</if>
+			<if test="jcxmCode != null">
+				JCXM_CODE,
+			</if>
+			<if test="jcxmExtend1 != null">
+				JCXM_EXTEND1,
+			</if>
+			<if test="jcxmExtend2 != null">
+				JCXM_EXTEND2,
+			</if>
+			<if test="jcxmExtend3 != null">
+				JCXM_EXTEND3,
+			</if>
+			<if test="jcxmExtend4 != null">
+				JCXM_EXTEND4,
+			</if>
+			<if test="jcxmExtend5 != null">
+				JCXM_EXTEND5,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jcxmId != null">
+				#{jcxmId,jdbcType=INTEGER},
+			</if>
+			<if test="jcxmName != null">
+				#{jcxmName,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmCode != null">
+				#{jcxmCode,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend1 != null">
+				#{jcxmExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend2 != null">
+				#{jcxmExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend3 != null">
+				#{jcxmExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend4 != null">
+				#{jcxmExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend5 != null">
+				#{jcxmExtend5,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.nbst.model.DetectionItem">
+		update detection_item
+		<set>
+			<if test="jcxmName != null">
+				JCXM_NAME = #{jcxmName,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmCode != null">
+				JCXM_CODE = #{jcxmCode,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend1 != null">
+				JCXM_EXTEND1 = #{jcxmExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend2 != null">
+				JCXM_EXTEND2 = #{jcxmExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend3 != null">
+				JCXM_EXTEND3 = #{jcxmExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend4 != null">
+				JCXM_EXTEND4 = #{jcxmExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="jcxmExtend5 != null">
+				JCXM_EXTEND5 = #{jcxmExtend5,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where JCXM_ID = #{jcxmId,jdbcType=INTEGER}
+	</update>
+	<select id="findByCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from detection_item
+		where 1=1
+		<if test="jcxmName != null">
+			and JCXM_NAME = #{jcxmName,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmCode != null">
+			and JCXM_CODE = #{jcxmCode,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend1 != null">
+			and JCXM_EXTEND1 = #{jcxmExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend2 != null">
+			and JCXM_EXTEND2 = #{jcxmExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend3 != null">
+			and JCXM_EXTEND3 = #{jcxmExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend4 != null">
+			and JCXM_EXTEND4 = #{jcxmExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend5 != null">
+			and JCXM_EXTEND5 = #{jcxmExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="count" resultType="java.lang.Integer" parameterType="Map">
+		select count(*) from detection_item
+		where 1=1
+		<if test="jcxmName != null">
+			and JCXM_NAME = #{jcxmName,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmCode != null">
+			and JCXM_CODE = #{jcxmCode,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend1 != null">
+			and JCXM_EXTEND1 = #{jcxmExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend2 != null">
+			and JCXM_EXTEND2 = #{jcxmExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend3 != null">
+			and JCXM_EXTEND3 = #{jcxmExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend4 != null">
+			and JCXM_EXTEND4 = #{jcxmExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="jcxmExtend5 != null">
+			and JCXM_EXTEND5 = #{jcxmExtend5,jdbcType=VARCHAR}
+		</if>
+	</select>
+</mapper>

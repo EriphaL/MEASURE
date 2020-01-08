@@ -1,0 +1,24 @@
+<%@ page language="java" isELIgnored="false" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<link href="${ctx}/styles/bootstrap.css" rel="stylesheet">
+	<link href="${ctx}/styles/select2.min.css" rel="stylesheet">
+	<link href="${ctx}/styles/font-awesome.min.css" rel="stylesheet">
+	<link href="${ctx}/styles/advanced-datatable_demo_page.css" rel="stylesheet">
+    <link href="${ctx}/styles/advanced-datatable_demo_table.css" rel="stylesheet">
+    <link href="${ctx}/styles/DT_bootstrap.css" rel="stylesheet">
+    
+    <link href="${ctx}/styles/animate.min.css" rel="stylesheet"/>
+    <link href="${ctx}/styles/common.css" rel="stylesheet"/>
+    
+    <link href="${ctx}/styles/systemConfigure.css" rel="stylesheet"/>
+    
+    <link href="${ctx}/styles/style.css" rel="stylesheet">
+    <link href="${ctx}/styles/toastr.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="${ctx}/script/html5shiv.min.js"></script>
+    <script src="${ctx}/script/respond.min.js"></script>
+    <![endif]-->

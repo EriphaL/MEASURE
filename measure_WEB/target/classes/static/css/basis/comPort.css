@@ -1,0 +1,249 @@
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
+.container-fluid{
+	width:100%;
+/* 	height:100%; */
+    padding: 25px 15px;
+/* 	background:#EFF0F4; */
+}
+.COM{
+	background: #fff;
+/* 	height: 100%; */
+	width: 100%;
+	border-radius:5px;
+}
+.COMTop{
+	width: 100%;
+	height: 600px;
+}
+.COMTop1{
+	height: 50px;
+	width: 100%;
+	padding: 15px;
+	
+}
+.COMTop1 > div {
+	height: 100%;
+	width: 33.3%;
+	float: left;
+}
+.COMTop1 > div:nth-child(2){
+	text-align: center;
+}
+.COMTop1 > div:nth-child(3){
+	text-align: right;
+}
+
+.COMTop1 > div select{
+	width: 100px;
+}
+.cb{
+	  vertical-align: text-top;
+}
+
+.COMTop2{
+	width: 100%;
+	height: 550px;
+} 
+.COMTop2L{
+	float:left;
+	width:60%;
+	height:100%;
+	/* background: #ddd; */
+}
+.COMTop2R{
+	float:left;
+	width:40%;
+	height:100%;
+/* 	background: #0080ff; */
+	padding: 15px 15px 15px 7.5px;
+}
+.COMTop2R1{
+	height: 400px;
+	width: 100%;
+	border: solid 1px #cdcbcb;
+	border-radius:5px;
+}
+.COMTop2R2 table{
+	width: 100%;
+}
+.COMTop2R2 table tr td{
+	width: 33.3%;
+	height: 50px;
+}
+.COMTop2R2 table tr:nth-child(1) td:nth-child(1){
+	text-align: center;
+	vertical-align: top;
+	padding: 20px;
+}
+.COMTop2R2 table tr:nth-child(2) td:nth-child(1){
+	text-align: center;
+	vertical-align: top;
+	padding: 10px;
+}
+.COMTop2R2 table tr td:nth-child(2){
+	text-align: right;
+}
+.COMTop2R2 table tr td:nth-child(3){
+	text-align: right;
+}
+.COMTop2R2 table tr td button{
+	width: 160px;
+	height: 30px;
+	border: solid 1px #c6c6c6;
+}
+.COMTop2L1{
+	width: 25%;
+	height: 320px;
+	float: left;
+	padding: 15px 7.5px 0 15px;;
+}
+.COMTop2L1_1{
+	height: 100%;
+	width: 100%;
+	border: solid 1px #dcdcdc;
+	border-radius:5px;
+	padding: 10px;
+}
+.COMTop2L1_1 p{
+	border-left:3px solid #22b7b5;;
+	padding-left: 10px;
+}
+.COMTop2L1_1 table{
+	width: 100%;
+}
+.COMTop2L1_1 table tr td:nth-child(1){
+	padding:10px 0 10px 0;
+	width: 40%;
+}
+.COMTop2L1_1 table tr td:nth-child(2) select{
+	width: 100%;
+}
+.COMTop2L1_1 table tr:nth-child(6) td:nth-child(2){
+	text-align: right;
+	padding-right: 20px;
+}
+.COMTop2L2{
+	width: 75%;
+	height: 320px;
+	float: left;
+	padding: 15px 7.5px 0 7.5px;
+}
+.COMTop2L2_1{
+	height: 100%;
+	width: 100%;
+	border: solid 1px #dcdcdc;
+	border-radius:5px;
+	padding: 10px;
+}
+.COMTop2L2_1 p{
+	border-left:3px solid #22b7b5;
+	padding-left: 10px;
+}
+.COMTop2L2_1 table{
+	width: 100%;
+}
+.COMTop2L2_1 table tr td:nth-child(1){
+	width: 30.3%;
+}
+.COMTop2L2_1 table tr:nth-child(1) td select{
+	width: 80px;
+}
+.COMTop2L2_1 table tr:nth-child(1) td:nth-child(2){
+	text-align: center;
+}
+.COMTop2L2_1 table tr:nth-child(2) td:nth-child(1) input{
+	width: 70%;
+}
+.COMTop2L2_1 table tr:nth-child(4) td:nth-child(2) input,
+.COMTop2L2_1 table tr:nth-child(5) td:nth-child(2) input,
+.COMTop2L2_1 table tr:nth-child(6) td:nth-child(2) input,
+.COMTop2L2_1 table tr:nth-child(7) td:nth-child(2) input{
+	width: 80px;
+}
+.COMTop2L2_1 table tr:nth-child(4) td:nth-child(2){
+	padding-left:48px; 
+}
+.COMTop2L2_1 table tr:nth-child(5) td:nth-child(2),
+.COMTop2L2_1 table tr:nth-child(6) td:nth-child(2),
+.COMTop2L2_1 table tr:nth-child(7) td:nth-child(2){
+	padding-left:76px; 
+}
+.COMTop2L2_1 table tr td:nth-child(2){
+	width: 46.3%;
+}
+.COMTop2L2_1 table tr td:nth-child(3){
+	width: 23.3%;
+}
+.COMTop2L2_1 table tr td{
+	padding:5px 0px;
+}
+
+.COMTop2L3{
+	height: 230px;
+	width: 100%;
+	clear: both;
+	padding:15px 7.5px 15px 15px;
+}
+.COMTop2L3_1{
+	height: 100%;
+	width: 100%;
+	border: solid 1px #dcdcdc;
+	border-radius:5px;
+	padding: 10px;
+}
+.COMTop2L3_1 p{
+	border-left:3px solid #22b7b5;;
+	padding-left: 10px;
+}
+#table tr td{
+	padding: 10px;
+}
+.COMTop2L3_1_1{
+	margin-bottom: 10px;
+}
+.COMTop2L3_1_1 select{
+	width:80px;
+}
+
+.COMBottom{
+	height: 80px;
+	width: 100%;
+	border-top:1px solid #dcdcdc;
+	margin-top: 20px;
+}
+.COMBottomL{
+	width: 60%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	padding: 25px;
+}
+.COMBottomR{
+	width: 40%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	padding: 25px;
+}
+.COMBottomL button{
+	width: 100px;
+	height: 30px;
+}
+.COMBottomL button:nth-child(1){
+	margin-right: 50px;
+}
+.COMBottomR button{
+	width: 160px;
+	height: 30px;
+}
+.btnT.btn-default:hover, .btnT.btn-default:active{
+    background: #22b7b5;
+    color: white;
+}
+input,button,select,.btn{
+	outline:none;
+}

@@ -1,0 +1,103 @@
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
+.table {table-layout:fixed;}
+
+.modal-header{
+	background:#3f51b5;
+	color:white;
+	font-weight:bold;
+}
+
+body{
+	background: #eff0f4;
+}
+
+.tabpanel {
+    border: solid 1px #eff0f4;
+}
+
+.container-fluid{
+	width:100%;
+	height:100%;
+	padding:0;
+	background:#eff0f4 !important;
+}
+
+.container-fluid>.leftdiv{
+	width:50%;
+	height:100%;
+	float:left;
+	background:#eff0f4;;
+	padding:25px 7.5px 15px 15px;
+}
+.container-fluid>.rightdiv{
+	width:50%;
+	height:100%;
+	float:right;
+	background:#eff0f4;;
+	padding:25px 15px 15px 7.5px;
+}
+
+.leftdiv>div,.rightdiv>div{
+	width:100%;
+	border-radius:5px;
+	background: #fff;
+	padding:15px 20px;
+}
+
+.spandiv{
+	padding:400px 100px 100px 400px;
+}
+.btn{
+	border-radius: 5px;
+    padding: 0px 8px;
+   /*  color:white; */
+    width:60px;
+    height:25px;
+    line-height:25px;
+    font-size: 14px;
+}
+.table-hover>tbody>tr>td{
+    padding:5px !important;
+}
+.rightdiv_head{
+	margin-bottom: 10px;
+	line-height: 25px;
+}
+.leftdiv_head{
+	margin-bottom: 10px;
+	line-height: 25px;
+}
+.titlex{
+	border-left: 3px solid #22b7b5;
+	padding-left: 8px;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+.btnT.btn-default:hover, .btnT.btn-default:active{
+    background: #22b7b5;
+    color: white;
+    border: none;
+}
+input,button,.btn{
+	outline:none;
+}
+
+.btnW.btn-xs:hover{
+	font-weight:bold;
+	background:#1ea5a3 !important;
+}
+
+.btnYe.btn-xs:hover{
+	font-weight:bold;
+	background:#e5ac30 !important;
+}
+
+.btnD.btn-xs:hover{
+	font-weight:bold;
+	background:#e32e2e !important;
+}
+

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nbst.dao.mapper.imesweb.UserMapper">
+	<resultMap id="BaseResultMap" type="com.nbst.model.User">
+		<id column="YH_ID" property="yhId" jdbcType="INTEGER" />
+		<result column="YH_GS_ID" property="yhGsId" jdbcType="INTEGER" />
+		<result column="YH_USERNAME" property="yhUsername"
+			jdbcType="VARCHAR" />
+		<result column="YH_PASSWORD" property="yhPassword"
+			jdbcType="VARCHAR" />
+		<result column="YH_NAME" property="yhName" jdbcType="VARCHAR" />
+		<result column="YH_TEL" property="yhTel" jdbcType="VARCHAR" />
+		<result column="YH_EMAIL" property="yhEmail" jdbcType="VARCHAR" />
+		<result column="YH_WECHAT" property="yhWechat"
+			jdbcType="VARCHAR" />
+		<result column="YH_ADDRESS" property="yhAddress"
+			jdbcType="VARCHAR" />
+		<result column="YH_STATE" property="yhState" jdbcType="INTEGER" />
+		<result column="YH_CREATE_TIME" property="yhCreateTime"
+			jdbcType="BIGINT" />
+		<result column="YH_UPDATE_TIME" property="yhUpdateTime"
+			jdbcType="BIGINT" />
+		<result column="YH_DELETE_TIME" property="yhDeleteTime"
+			jdbcType="BIGINT" />
+		<result column="YH_EXTEND1" property="yhExtend1"
+			jdbcType="VARCHAR" />
+		<result column="YH_EXTEND2" property="yhExtend2"
+			jdbcType="VARCHAR" />
+		<result column="YH_EXTEND3" property="yhExtend3"
+			jdbcType="VARCHAR" />
+		<result column="YH_EXTEND4" property="yhExtend4"
+			jdbcType="VARCHAR" />
+		<result column="YH_EXTEND5" property="yhExtend5"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		YH_ID, YH_GS_ID, YH_USERNAME, YH_PASSWORD, YH_NAME, YH_TEL,
+		YH_EMAIL,
+		YH_WECHAT,
+		YH_ADDRESS, YH_STATE, YH_CREATE_TIME,
+		YH_UPDATE_TIME, YH_DELETE_TIME, YH_EXTEND1,
+		YH_EXTEND2, YH_EXTEND3,
+		YH_EXTEND4, YH_EXTEND5
+	</sql>
+	<select id="findById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from user
+		where YH_ID = #{yhId,jdbcType=INTEGER}
+	</select>
+	<select id="findByName" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from user
+		where YH_USERNAME = #{yhUsername,jdbcType=VARCHAR}
+	</select>
+	
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from user
+		where YH_ID =
+		#{yhId,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="insert" parameterType="com.nbst.model.User"
+		useGeneratedKeys="true" keyProperty="yhId">
+		insert into user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="yhId != null">
+				YH_ID,
+			</if>
+			<if test="yhGsId != null">
+				YH_GS_ID,
+			</if>
+			<if test="yhUsername != null">
+				YH_USERNAME,
+			</if>
+			<if test="yhPassword != null">
+				YH_PASSWORD,
+			</if>
+			<if test="yhName != null">
+				YH_NAME,
+			</if>
+			<if test="yhTel != null">
+				YH_TEL,
+			</if>
+			<if test="yhEmail != null">
+				YH_EMAIL,
+			</if>
+			<if test="yhWechat != null">
+				YH_WECHAT,
+			</if>
+			<if test="yhAddress != null">
+				YH_ADDRESS,
+			</if>
+			<if test="yhState != null">
+				YH_STATE,
+			</if>
+			<if test="yhCreateTime != null">
+				YH_CREATE_TIME,
+			</if>
+			<if test="yhUpdateTime != null">
+				YH_UPDATE_TIME,
+			</if>
+			<if test="yhDeleteTime != null">
+				YH_DELETE_TIME,
+			</if>
+			<if test="yhExtend1 != null">
+				YH_EXTEND1,
+			</if>
+			<if test="yhExtend2 != null">
+				YH_EXTEND2,
+			</if>
+			<if test="yhExtend3 != null">
+				YH_EXTEND3,
+			</if>
+			<if test="yhExtend4 != null">
+				YH_EXTEND4,
+			</if>
+			<if test="yhExtend5 != null">
+				YH_EXTEND5,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="yhId != null">
+				#{yhId,jdbcType=INTEGER},
+			</if>
+			<if test="yhGsId != null">
+				#{yhGsId,jdbcType=INTEGER},
+			</if>
+			<if test="yhUsername != null">
+				#{yhUsername,jdbcType=VARCHAR},
+			</if>
+			<if test="yhPassword != null">
+				#{yhPassword,jdbcType=VARCHAR},
+			</if>
+			<if test="yhName != null">
+				#{yhName,jdbcType=VARCHAR},
+			</if>
+			<if test="yhTel != null">
+				#{yhTel,jdbcType=VARCHAR},
+			</if>
+			<if test="yhEmail != null">
+				#{yhEmail,jdbcType=VARCHAR},
+			</if>
+			<if test="yhWechat != null">
+				#{yhWechat,jdbcType=VARCHAR},
+			</if>
+			<if test="yhAddress != null">
+				#{yhAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="yhState != null">
+				#{yhState,jdbcType=INTEGER},
+			</if>
+			<if test="yhCreateTime != null">
+				#{yhCreateTime,jdbcType=BIGINT},
+			</if>
+			<if test="yhUpdateTime != null">
+				#{yhUpdateTime,jdbcType=BIGINT},
+			</if>
+			<if test="yhDeleteTime != null">
+				#{yhDeleteTime,jdbcType=BIGINT},
+			</if>
+			<if test="yhExtend1 != null">
+				#{yhExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend2 != null">
+				#{yhExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend3 != null">
+				#{yhExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend4 != null">
+				#{yhExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend5 != null">
+				#{yhExtend5,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.nbst.model.User">
+		update user
+		<set>
+			<if test="yhGsId != null">
+				YH_GS_ID = #{yhGsId,jdbcType=INTEGER},
+			</if>
+			<if test="yhUsername != null">
+				YH_USERNAME = #{yhUsername,jdbcType=VARCHAR},
+			</if>
+			<if test="yhPassword != null">
+				YH_PASSWORD = #{yhPassword,jdbcType=VARCHAR},
+			</if>
+			<if test="yhName != null">
+				YH_NAME = #{yhName,jdbcType=VARCHAR},
+			</if>
+			<if test="yhTel != null">
+				YH_TEL = #{yhTel,jdbcType=VARCHAR},
+			</if>
+			<if test="yhEmail != null">
+				YH_EMAIL = #{yhEmail,jdbcType=VARCHAR},
+			</if>
+			<if test="yhWechat != null">
+				YH_WECHAT = #{yhWechat,jdbcType=VARCHAR},
+			</if>
+			<if test="yhAddress != null">
+				YH_ADDRESS = #{yhAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="yhState != null">
+				YH_STATE = #{yhState,jdbcType=INTEGER},
+			</if>
+			<if test="yhCreateTime != null">
+				YH_CREATE_TIME = #{yhCreateTime,jdbcType=BIGINT},
+			</if>
+			<if test="yhUpdateTime != null">
+				YH_UPDATE_TIME = #{yhUpdateTime,jdbcType=BIGINT},
+			</if>
+			<if test="yhDeleteTime != null">
+				YH_DELETE_TIME = #{yhDeleteTime,jdbcType=BIGINT},
+			</if>
+			<if test="yhExtend1 != null">
+				YH_EXTEND1 = #{yhExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend2 != null">
+				YH_EXTEND2 = #{yhExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend3 != null">
+				YH_EXTEND3 = #{yhExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend4 != null">
+				YH_EXTEND4 = #{yhExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="yhExtend5 != null">
+				YH_EXTEND5 = #{yhExtend5,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where YH_ID = #{yhId,jdbcType=INTEGER}
+	</update>
+	<select id="findByCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from user
+		where 1=1
+		<if test="yhGsId != null">
+			and YH_GS_ID = #{yhGsId,jdbcType=INTEGER}
+		</if>
+		<if test="yhUsername != null">
+			and YH_USERNAME = #{yhUsername,jdbcType=VARCHAR}
+		</if>
+		<if test="yhPassword != null">
+			and YH_PASSWORD = #{yhPassword,jdbcType=VARCHAR}
+		</if>
+		<if test="yhName != null">
+			and YH_NAME = #{yhName,jdbcType=VARCHAR}
+		</if>
+		<if test="yhTel != null">
+			and YH_TEL = #{yhTel,jdbcType=VARCHAR}
+		</if>
+		<if test="yhEmail != null">
+			and YH_EMAIL = #{yhEmail,jdbcType=VARCHAR}
+		</if>
+		<if test="yhWechat != null">
+			and YH_WECHAT = #{yhWechat,jdbcType=VARCHAR}
+		</if>
+		<if test="yhAddress != null">
+			and YH_ADDRESS = #{yhAddress,jdbcType=VARCHAR}
+		</if>
+		<if test="yhState != null">
+			and YH_STATE = #{yhState,jdbcType=INTEGER}
+		</if>
+		<if test="yhCreateTime != null">
+			and YH_CREATE_TIME = #{yhCreateTime,jdbcType=BIGINT}
+		</if>
+		<if test="yhUpdateTime != null">
+			and YH_UPDATE_TIME = #{yhUpdateTime,jdbcType=BIGINT}
+		</if>
+		<if test="yhDeleteTime != null">
+			and YH_DELETE_TIME = #{yhDeleteTime,jdbcType=BIGINT}
+		</if>
+		<if test="yhExtend1 != null">
+			and YH_EXTEND1 = #{yhExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend2 != null">
+			and YH_EXTEND2 = #{yhExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend3 != null">
+			and YH_EXTEND3 = #{yhExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend4 != null">
+			and YH_EXTEND4 = #{yhExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend5 != null">
+			and YH_EXTEND5 = #{yhExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="count" resultType="java.lang.Integer"
+		parameterType="Map">
+		select count(*) from user
+		where 1=1
+		<if test="yhGsId != null">
+			and YH_GS_ID = #{yhGsId,jdbcType=INTEGER}
+		</if>
+		<if test="yhUsername != null">
+			and YH_USERNAME = #{yhUsername,jdbcType=VARCHAR}
+		</if>
+		<if test="yhPassword != null">
+			and YH_PASSWORD = #{yhPassword,jdbcType=VARCHAR}
+		</if>
+		<if test="yhName != null">
+			and YH_NAME = #{yhName,jdbcType=VARCHAR}
+		</if>
+		<if test="yhTel != null">
+			and YH_TEL = #{yhTel,jdbcType=VARCHAR}
+		</if>
+		<if test="yhEmail != null">
+			and YH_EMAIL = #{yhEmail,jdbcType=VARCHAR}
+		</if>
+		<if test="yhWechat != null">
+			and YH_WECHAT = #{yhWechat,jdbcType=VARCHAR}
+		</if>
+		<if test="yhAddress != null">
+			and YH_ADDRESS = #{yhAddress,jdbcType=VARCHAR}
+		</if>
+		<if test="yhState != null">
+			and YH_STATE = #{yhState,jdbcType=INTEGER}
+		</if>
+		<if test="yhCreateTime != null">
+			and YH_CREATE_TIME = #{yhCreateTime,jdbcType=BIGINT}
+		</if>
+		<if test="yhUpdateTime != null">
+			and YH_UPDATE_TIME = #{yhUpdateTime,jdbcType=BIGINT}
+		</if>
+		<if test="yhDeleteTime != null">
+			and YH_DELETE_TIME = #{yhDeleteTime,jdbcType=BIGINT}
+		</if>
+		<if test="yhExtend1 != null">
+			and YH_EXTEND1 = #{yhExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend2 != null">
+			and YH_EXTEND2 = #{yhExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend3 != null">
+			and YH_EXTEND3 = #{yhExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend4 != null">
+			and YH_EXTEND4 = #{yhExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="yhExtend5 != null">
+			and YH_EXTEND5 = #{yhExtend5,jdbcType=VARCHAR}
+		</if>
+	</select>
+</mapper>

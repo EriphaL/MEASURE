@@ -1,0 +1,32 @@
+	<script src="${ctx}/script/jquery-1.11.2.min.js"></script>
+	<script src="${ctx}/script/bootstrap.min.js"></script>
+	<script src="${ctx}/script/bootstrap-table.min.js"></script>
+	<script src="${ctx}/script/bootstrap-editable.js"></script>
+	<script src="${ctx}/script/bootstrap-table.js"></script>
+
+	<script src="${ctx}/script/bootstrap-table-zh-CN.js"></script>
+	<script src="${ctx}/script/bootstrap-table-editable.js"></script>	
+	<script src="${ctx}/script/select2.min.js"></script>
+	<script src="${ctx}/script/jquery.nicescroll.js"></script>
+	<!--dynamic table-->
+	<script src="${ctx}/script/jquery.dataTables.js"></script>
+	<script src="${ctx}/script/DT_bootstrap.js"></script>
+
+	<script src="${ctx}/script/jquery.hDialog.js"></script>
+	<!-- datatimepicker js -->
+	<script src="${ctx}/script/bootstrap-datepicker.js"></script>
+	<script src="${ctx}/script/bootstrap-datepicker.zh-CN.js"></script>
+	<script src="${ctx}/script/bootstrap-datetimepicker.min.js"></script>
+	<script src="${ctx}/script/bootstrap-datetimepicker.fr.js"></script>
+	<script src="${ctx}/script/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script src="${ctx}/script/bootstrap-table-export.js"></script>
+	<script src="${ctx}/script/tableExport.js"></script>
+	
+	<script src="${ctx}/script/theme.js"></script>
+	<script src="${ctx}/script/wms/base.js"></script>
+	<script src="${ctx}/script/jquery.validate.min.js"></script> 
+	<script src="${ctx}/script/messages_zh.js"></script>
+	<script src="${ctx}/script/toastr.js"></script>
+	<script src="${ctx}/script/toastr.setting.js"></script>
+	
+	 

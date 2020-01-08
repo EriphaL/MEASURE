@@ -1,0 +1,148 @@
+	.container-fluid{
+		background-color:#22b7b5;
+	}
+	.horizontal-menu-page .navbar-default .navbar-nav > li > a {
+   	 	 font-size: 14px;
+   		 font-family: -webkit-pictograph;
+    }
+    .horizontal-menu-page .dropdown-menu > li > a:hover, .horizontal-menu-page .dropdown-menu > li > a:focus, .horizontal-menu-page .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .horizontal-menu-page .dropdown-menuX > li > a:hover, .horizontal-menu-page .dropdown-menuX > li > a:focus {
+	    background-color: #01a4a2;
+	    color: #fdfffe;
+	}
+	.horizontal-menu-page .navbar-default .navbar-nav > .active > a, .horizontal-menu-page .navbar-default .navbar-nav > .active > a:hover, .horizontal-menu-page .navbar-default .navbar-nav > .active > a:focus, .horizontal-menu-page .navbar-default .navbar-nav > .open > a, .horizontal-menu-page .navbar-default .navbar-nav > .open > a:hover, .horizontal-menu-page .navbar-default .navbar-nav > .open > a:focus, .horizontal-menu-page .navbar-default .navbar-nav > li > a:hover, .horizontal-menu-page .navbar-default .navbar-nav > li > a:focus {
+	    background-color: #01a4a2;
+	}
+	.horizontal-menu-page .dropdown-menu, .horizontal-menu-page .dropdown-menuX {
+	    background-color: #22b7b5;
+	}
+	
+	.wrapper {
+    padding: 0px;
+    padding-bottom: 0px;
+}
+	
+	#tabs{
+		width:100% !important;
+		padding:0 !important;
+	}
+	.tabpanel{
+		width:100% !important;
+		padding:0 !important;
+	}
+
+	.tabpanel_content{
+		width:100% !important;
+		padding:0 !important;
+	}
+
+	.custom-tab.turquoise-tab{
+		width:100% !important;
+		padding:0 !important;
+		border-radius: 0;
+	}
+	
+	.tabpanel_tab_content .custom-tab .turquoise-tab{
+		width:100% !important;
+		padding:0 !important;
+	}
+	
+	.tabpanel_move_content{
+		width:100% !important;
+		padding:0 !important;
+	}
+	
+	.tabpanel_tab_content .tabpanel_move_content{
+		width:100% !important;
+		background-color: white !important;
+		height: 40px;
+		border-bottom: 2px solid #d3d4d4;
+	}
+	
+	.tabpanel_mover li{
+		border:none;
+		background-color: #ffffff;
+		color: #17a9a8;
+		border: solid 1px #17a9a8;
+		line-height: 22px;
+	    height: 25px;
+	    border-radius: 25px;
+	    margin-top: 7px;
+ 	    margin-left: 15px;
+	}
+	
+	.tabpanel_mover li.active{
+		color:#fff;
+		background-color: #22b7b5;
+    	/* box-shadow: 0px 5px 10px 0px rgba(34, 183, 181, 0.5); */
+    	border-radius: 25px;
+	    line-height: 25px;
+	    height: 25px;
+	    border: 0;
+	    margin-top: 7px;
+	}
+	
+	.tabpanel_tab_content .tabpanel_tab_spacer{
+		border-top: 1px solid #ffffff;
+	}
+}
+
+	
+	
+.horizontal-menu-page .navbar-brand {
+    padding: 0px 17px !important;
+}
+
+
+.dropdown-menu{
+	margin-left:0px !important;
+	min-width: 120px!important;
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.horizontal-menu-page .navbar-default .navbar-nav > li > a {
+   /*  margin-left: 20px; */
+}
+
+.horizontal-menu-page .navbar-default .navbar-nav > li > a {
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+/*     padding: 10px 15px; */
+    width: 120px;
+    text-align: center;
+}
+
+/* .horizontal-menu-page .dropdown-menu > li > a, .horizontal-menu-page .dropdown-menuX > li > a {
+    color: rgba(255,255,255,0.7);
+} */
+
+.horizontal-menu-page .navbar-default .navbar-nav .open .dropdown-menu > li > a, .horizontal-menu-page .navbar-default .navbar-nav .open .dropdown-menuX > li > a {
+    color: rgba(255,255,255,1);
+}
+
+.custom-tab.turquoise-tab {
+    background: #22b7b5 !important;
+}
+.tabpanel_tab_content .tabpanel_right_scroll {
+    background: #22b7b5 url(../../images/tabImage/TabPanel/scroll-right.png) no-repeat 0;
+}
+.tabpanel_mover li .closer {
+    background: transparent url(../../images/tabImage/TabPanel/close_green.png) no-repeat;
+    top:7px;
+}
+.tabpanel_mover li.active .closer {
+    background: transparent url(../../images/tabImage/TabPanel/close_white.png) no-repeat;
+    top:7px;
+}
+
+.tabpanel_mover li:nth-child(1) .title{
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}

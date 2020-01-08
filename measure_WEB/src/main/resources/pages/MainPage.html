@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="base :: header (title='测量系统页面')" />
+<link th:href="@{css/controlChart/MainPage.css}" rel="stylesheet" />
+<link th:href="@{plugins/handsontable/css/handsontable.full.css}" rel="stylesheet" />
+<link th:href="@{plugins/jquery/css/metisMenu.min.css}" rel="stylesheet" />
+
+<style>
+  .bldyA {
+    background: blue;
+    color: #fff;
+  }
+</style>
+
+<body>
+
+  <!-- 计数页面/计量页面 -->
+  <iframe src="" style="display: none;width: 100%;height: 100%;border: none;" id="MainChangePageID"> </iframe>
+
+  <div class="allDiv container" style="width: 100%;height:100%;padding: 0;overflow: hidden;">
+    <div class="all container-fluid" style="padding:0px;width: 100%;height:100%;">
+      <div class="main" style="margin-top:10px;">
+
+        <!-- 树形产品显示 -->
+        <div class="main_left">
+          <div>
+           
+            <nav class="navbar-default navbar-static-side" role="navigation">
+              <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                  <div class="nav-header text-center">
+                    <div>
+                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Shattrath</strong>
+                        </span></span>  
+                    </div>
+                  </div>
+                  
+                  <li>
+                    <a href="#"><i class="fa fa-cloud"></i> <span class="nav-label">产品1</span> <span
+                        class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-cloud"></i> <span class="nav-label">产品1</span> <span
+                        class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-cloud"></i> <span class="nav-label">产品1</span> <span
+                        class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-cloud"></i> <span class="nav-label">产品1</span> <span
+                        class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                      <i class="fa fa-cloud"></i>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-cloud"></i> <span class="nav-label">产品1</span> <span
+                        class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-cloud"></i> <span class="nav-label">产品1</span> <span
+                        class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                      <li><a href="#"><i class="fa fa-arrow-right"></i>检测项1</a></li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- <div id="rMenu">
+          <ul>
+            <li id="m_addE" onclick="addEqualNode();">新增同级</li>
+            <li id="m_addN" onclick="addNextNode();">新增下级</li>
+            <li id="m_update" onclick="updateNode();">修改</li>
+            <li id="m_del" onclick="removeNode();">删除</li>
+            <li id="m_cancel" onclick="cancelNode();">取消选中</li>
+          </ul>
+        </div> -->
+        
+        <div class="main_right">
+          <div>
+            <!-- <div style="background-color: #22b7b5;height:85px;">
+              <span class="titlex" id="kztBt"
+                style="font-weight:bold;margin:10px;font-size:20px;display: inline-block;color:#fff;">夏厦测量系统</span>
+
+              &nbsp;&nbsp;
+              </div> -->
+              <!-- <div
+                style="width:11px;height:11px;background:#22b7b5;border-radius:11px;display: inline-block;margin-bottom:1px;">
+              </div>
+              <span style="vertical-align: text-bottom;">正常</span>
+              &nbsp;&nbsp;
+              <div
+                style="width:11px;height:11px;background:#f23333;border-radius:11px;display: inline-block;margin-bottom:1px;">
+              </div>
+              <span style="vertical-align: text-bottom;">失控未处理</span>
+              &nbsp;&nbsp;
+              <div
+                style="width:11px;height:11px;background:#f5b834;border-radius:11px;display: inline-block;margin-bottom:1px;">
+              </div>
+              <span style="vertical-align: text-bottom;">失控已处理</span> -->
+
+              <!-- 0604新增 -->
+              <!-- onclick="main_kztsx()" -->
+              <!-- <button class="btn btn-default btnT" id="kztsxBtn" data-toggle="modal" data-target="#kztsxModal"
+                style="float:right;margin: 8px;outline:none;height:25px;">控制图属性</button>
+              <button class="btn btn-default btnT" id="bldyBtn" onclick="main_bldy()"
+                style="float:right;margin: 8px;outline:none;height:25px;">不良定义</button>
+              <button class="btn btn-default btnT" id="kztcxBtn"
+                style="float:right;margin: 8px;outline:none;height:25px;">控制图过滤</button>
+              <button class="btn btn-default btnT" id="mainAdd" onclick="main_add()"
+                style="float:right;margin: 8px;outline:none;width:60px;height:25px;font-size: 14px;">添加</button> -->
+            
+            <!-- 存放检测项列表展示 -->
+            
+              <div style="padding: 10px;border:1px solid rgb(197, 193, 193);margin:10px;">
+                <div style="width: 100%;border-radius:5px;background: #fff;padding: 5px;">
+                  <span id="showProductName"
+                    style="background:
+                    #eff0f4;color:#000;font-weight:bold;font-size:16px;padding-left: 20px;padding-right:
+                    20px;padding-top: 10px;padding-bottom: 10px;">产品a</span>
+                  <span>&nbsp;&nbsp;</span>
+                  
+                  
+                  
+                  <input type="text" id="startTime" value="开始时间"
+                    style="height: 30px;border-radius:5px;border:none;border:1px solid #ddd;" />
+                  <span>&nbsp;——&nbsp;</span>
+                  <input type="text" id="endTime" value="结束时间"
+                    style="height: 30px;border-radius:5px;border:none;border:1px solid #ddd;" />
+                  &nbsp;&nbsp;&nbsp;
+                  <button type="button" class="btn btn-default btn-sm btnTT" onclick="timeSearch(2)"
+                    style="font-size: 14px;margin-top: -2px;outline:none;">查询</button>
+                    <button type="button" class="btn btn-default btn-sm btnTT" onclick=""
+                      style="font-size: 14px;margin-top: -2px;outline:none;">重置</button>
+                </div>
+              </div>
+
+              <!-- datepicker版本
+              
+                <div class="input-daterange input-group col-md-4" id="datepicker" >
+                    <input id="startTime" type="text" class="input-sm form-control" name="start" value="开始时间" />
+                    <span class="input-group-addon">——</span>
+                    <input id="endTime" type="text" class="input-sm form-control" name="end" value="结束时间" />
+                    <button type="button" class="btn btn-default btn-sm btnTT" onclick="timeSearch(2)"
+                      style="font-size: 14px;margin-top: -2px;outline:none;">查询</button>
+                    <button type="button" class="btn btn-default btn-sm btnTT" onclick=""
+                      style="font-size: 14px;margin-top: -2px;outline:none;">重置</button>
+                </div> -->
+                
+ 
+              <!-- <table id="kztList" class="table table-hover">
+              </table> -->
+              <!-- * data-pagination 指定是否启用分页
+                                        * data-page-list 指定分页的页数据量数组 '[5,10]'
+                                        * data-side-pagination 指定分页是否是服务端(server)/客户端(client)
+                                        * 特别说明：
+                                        * 客户端，请求参数：
+                                        * search:文本框内容，在文本框内容改变是自动提交请求
+                                        * order: 排序方式
+                                        * sort:排序列名
+                                        * offset:划过条数
+                                        * limit:要获取的数据的条数
+                                        ！！！注意，这两种后台传过来的json数据格式也不一样
+                                        client : 正常的json array格式 [{},{},{}]
+                                        server： {“total”:0,”rows”:[]} 其中total表示查询的所有数据条数，后面的rows是指当前页面展示的数据量。
+                                        value: 所在collumn的当前显示值，
+                                        row:整个行的数据 ，对象化，可通过.获取 -->
+              <div class="col-md-12" style="height:600px;width: 100%;padding: 0px 15px 0px 15px;">
+                <div style="height:560px;width: 100%;border-radius:0px;background: #fff;padding: 0px;">
+                  <table id="table" class="table table-hover table-responsive table-sm" data-height="460" data-pagination="true"
+                    data-auto-refresh="true" data-side-pagination="client" data-show-export="true"
+                    data-export-data-type="all" data-query-params="queryParams">
+                    
+                    <thead class="text-warning">
+                      
+                    </thead>
+                  </table>
+                </div>
+                
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+
+      
+  </div>
+  <!-- modal -->
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="width:330px;">
+     <div class="modal-content" style="border-radius: 5px;">
+       <div class="modal-header" style="background:white;color:black;font-weight:bold;border-radius: 5px;">
+         <span class="titlex" id="myModalLabel" style="color:black;font-size: 16px;margin-left:5px;"></span>
+       </div>
+       <div class="modal-body" style="padding: 5px 20px 0px 20px;">
+         <div class="body_Table" style="border:1px solid #eff0f4;border-radius:5px;padding:10px;">
+           <table class="inForm">
+             <tr>
+               <td>添加备注：</td>
+               <td><input type="text" id="addInfo" style="outline:none;" /></td>
+             </tr>
+             
+           </table>
+         </div>
+       </div>
+       <div class="modal-footer" style="margin-top:0;border-top:none;">
+         <button type="button" class="btn btn-default" onClick="save()"
+           style="width:50px;height:28px;outline:none;padding:0;border-radius:5px;">提交</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal"
+           style="width:50px;height:28px;outline:none;padding:0;border-radius:5px;">关闭</button>
+       </div>
+     </div><!-- /.modal-content -->
+   </div><!-- /.modal -->
+ </div>
+
+
+
+
+</body>
+<div th:include="base :: bottom" />
+<!-- <div th:include="base :: bootstrapTablez" /> -->
+<div th:include="base :: bootstrapTable" />
+<div th:include="base :: tableExport" />
+<div th:include="base :: showBo" />
+<div th:include="base :: toastr" />
+<div th:include="base :: ztree" />
+
+<script th:src="@{plugins/jquery/js/jquery.contextify2.js}"></script>
+<script th:src="@{plugins/handsontable/js/handsontable.full.js}"></script>
+
+<script th:src="@{plugins/bootstrap/js/bootstrap-table-resizable.js}"></script><!-- 列可拉伸相关JS -->
+<script th:src="@{plugins/bootstrap/js/colResizable-1.6.min.js}"></script>
+
+<script th:src="@{plugins/handsontable/js/sheetclip.js}"></script>
+<script th:src="@{plugins/jquery/js/metisMenu.min.js}"></script>
+<script th:src="@{js/MainPage.js}"></script>
+<script th:src="@{js/MainPageAdd.js}"></script>
+
+
+
+</html>

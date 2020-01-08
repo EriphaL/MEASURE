@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.nbst.dao.mapper.imesweb.TypeLevelOneMapper">
+	<resultMap id="BaseResultMap"
+		type="com.nbst.model.TypeLevelOne">
+		<id column="CCLXONE_ID" property="cclxoneId" jdbcType="INTEGER" />
+		<result column="CCLXONE_NAME" property="cclxoneName"
+			jdbcType="VARCHAR" />
+		<result column="CCLXONE_EXTEND1" property="cclxoneExtend1"
+			jdbcType="VARCHAR" />
+		<result column="CCLXONE_EXTEND2" property="cclxoneExtend2"
+			jdbcType="VARCHAR" />
+		<result column="CCLXONE_EXTEND3" property="cclxoneExtend3"
+			jdbcType="VARCHAR" />
+		<result column="CCLXONE_EXTEND4" property="cclxoneExtend4"
+			jdbcType="VARCHAR" />
+		<result column="CCLXONE_EXTEND5" property="cclxoneExtend5"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		CCLXONE_ID, CCLXONE_NAME, CCLXONE_EXTEND1, CCLXONE_EXTEND2,
+		CCLXONE_EXTEND3,
+		CCLXONE_EXTEND4,
+		CCLXONE_EXTEND5
+	</sql>
+	<select id="findById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from type_level_one
+		where CCLXONE_ID = #{cclxoneId,jdbcType=INTEGER}
+	</select>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from type_level_one
+		where CCLXONE_ID = #{cclxoneId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.nbst.model.TypeLevelOne"
+		useGeneratedKeys="true" keyProperty="cclxoneId">
+		insert into type_level_one
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="cclxoneId != null">
+				CCLXONE_ID,
+			</if>
+			<if test="cclxoneName != null">
+				CCLXONE_NAME,
+			</if>
+			<if test="cclxoneExtend1 != null">
+				CCLXONE_EXTEND1,
+			</if>
+			<if test="cclxoneExtend2 != null">
+				CCLXONE_EXTEND2,
+			</if>
+			<if test="cclxoneExtend3 != null">
+				CCLXONE_EXTEND3,
+			</if>
+			<if test="cclxoneExtend4 != null">
+				CCLXONE_EXTEND4,
+			</if>
+			<if test="cclxoneExtend5 != null">
+				CCLXONE_EXTEND5,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="cclxoneId != null">
+				#{cclxoneId,jdbcType=INTEGER},
+			</if>
+			<if test="cclxoneName != null">
+				#{cclxoneName,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend1 != null">
+				#{cclxoneExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend2 != null">
+				#{cclxoneExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend3 != null">
+				#{cclxoneExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend4 != null">
+				#{cclxoneExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend5 != null">
+				#{cclxoneExtend5,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.nbst.model.TypeLevelOne">
+		update type_level_one
+		<set>
+			<if test="cclxoneName != null">
+				CCLXONE_NAME = #{cclxoneName,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend1 != null">
+				CCLXONE_EXTEND1 = #{cclxoneExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend2 != null">
+				CCLXONE_EXTEND2 = #{cclxoneExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend3 != null">
+				CCLXONE_EXTEND3 = #{cclxoneExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend4 != null">
+				CCLXONE_EXTEND4 = #{cclxoneExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="cclxoneExtend5 != null">
+				CCLXONE_EXTEND5 = #{cclxoneExtend5,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where CCLXONE_ID = #{cclxoneId,jdbcType=INTEGER}
+	</update>
+	<select id="findByCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from type_level_one
+		where 1=1
+		<if test="cclxoneName != null">
+			and CCLXONE_NAME = #{cclxoneName,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend1 != null">
+			and CCLXONE_EXTEND1 = #{cclxoneExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend2 != null">
+			and CCLXONE_EXTEND2 = #{cclxoneExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend3 != null">
+			and CCLXONE_EXTEND3 = #{cclxoneExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend4 != null">
+			and CCLXONE_EXTEND4 = #{cclxoneExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend5 != null">
+			and CCLXONE_EXTEND5 = #{cclxoneExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="count" resultType="java.lang.Integer"
+		parameterType="Map">
+		select count(*) from type_level_one
+		where 1=1
+		<if test="cclxoneName != null">
+			and CCLXONE_NAME = #{cclxoneName,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend1 != null">
+			and CCLXONE_EXTEND1 = #{cclxoneExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend2 != null">
+			and CCLXONE_EXTEND2 = #{cclxoneExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend3 != null">
+			and CCLXONE_EXTEND3 = #{cclxoneExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend4 != null">
+			and CCLXONE_EXTEND4 = #{cclxoneExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="cclxoneExtend5 != null">
+			and CCLXONE_EXTEND5 = #{cclxoneExtend5,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<select id="findTypeLevelName" resultType="java.lang.String">
+		select
+			CCLXONE_NAME ccName
+		from type_level_one
+		where CCLXONE_EXTEND2 = 1
+	</select>
+</mapper>

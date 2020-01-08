@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="base :: header (title='层次类型')" />
+<link th:href="@{css/basis/DetectionItem.css}" rel="stylesheet" />
+<style>
+	.inForm tr td {
+		padding: 5px;
+	}
+</style>
+
+<body>
+	<div>
+		<div class="container" style="width:100%;padding:0;">
+			<div class="container-fluid" style="padding:25px 15px;">
+				<div style="background-color: #ffffff">
+					<div class="rightdiv_head">
+						<span class="titlex" style="font-size:16px;">检测项管理</span>
+						<button class="btn btn-default btnT" style="float:right;outline:none;line-height:22.5px;"
+							onclick="showAdd()">添加</button>
+					</div>
+					<!-- 对table样式简单设置 -->
+					<table id="table" class="table table-hover" style="color: #212121;font-family: SourceHanSansCN-Normal;">
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="width:330px;">
+		<div class="modal-content" style="border-radius: 5px;">
+			<div class="modal-header" style="background:white;color:black;font-weight:bold;border-radius: 5px;">
+				<span class="titlex" id="myModalLabel" style="color:black;font-size: 16px;margin-left:5px;"></span>
+			</div>
+			<div class="modal-body" style="padding: 5px 20px 0px 20px;">
+				<div class="body_Table" style="border:1px solid #eff0f4;border-radius:5px;padding:10px;">
+					<table class="inForm">
+						<tr>
+							<td><span>产品名称:</span>&nbsp;&nbsp;&nbsp;
+								<!-- <select id="testProject" name="testProject" style="width:35%;height:25px;display:inline-block;outline:none;border-radius:4px;border:1px solid #c2c2c2;"></select> -->
+								<select id="testProject" name="testProject" class="selectpicker form-control" data-live-search="false"
+									data-width="35%" data-height="25px"
+									style="height:25px;display:inline-block;outline:none;border-radius:4px;border:1px solid #c2c2c2;outline:none;">
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>检测项名称：</td>
+							<td><input type="text" id="jcxmName" style="outline:none;" /></td>
+						</tr>
+						<tr>
+							<td>检测项编号：</td>
+							<td><input type="text" id="jcxmCode" style="outline:none;" /></td>
+						</tr>
+						<tr>
+							<td>--------判断规则--------</td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;&nbsp;目标值：</td>
+							<td><input type="text" id="target" style="outline:none;" /></td>
+						</tr>
+						<tr>
+							<td>&nbsp;&nbsp;&nbsp;误差：</td>
+							<td><input type="text" id="error" style="outline:none;" /></td>
+						</tr>
+						
+
+
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer" style="margin-top:0;border-top:none;">
+				<button type="button" class="btn btn-default" onclick="save()"
+					style="width:50px;height:28px;outline:none;padding:0;border-radius:5px;">保存</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal"
+					style="width:50px;height:28px;outline:none;padding:0;border-radius:5px;">关闭</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<div th:include="base :: bottom" />
+<div th:include="base :: bootstrapTable" />
+<div th:include="base :: showBo" />
+<div th:include="base :: toastr" />
+<script th:src="@{js/basis/DetectionItem.js}"></script>
+
+</html>

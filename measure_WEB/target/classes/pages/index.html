@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="base :: header (title='MEASURE')" />
+<link th:href="@{css/index/index.css}" rel="stylesheet" />
+
+<body class="horizontal-menu-page" style="overflow: hidden;">
+  <header class="topbar">
+    <section>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/}" style="padding: 1px 15px !important;"> <img
+                th:src="@{images/whitelogo_icon.png}" alt="" style="width:50px;height:51px;" />
+            </a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" id="nav">
+            </ul>
+            <!-- <a class="linkSystem" style="float: right;margin-right: -15px;cursor: pointer;" href="login.action">
+              <img th:src="@{images/index/out2.png}" alt="" style="width:26px;height:26px;margin-top: 11px;" />
+            </a>
+            <a class="linkSystem" style="float: right;margin-right: 15px;cursor: pointer;">
+              <img th:src="@{images/index/user2.png}" alt="" style="width:25px;height:25px;margin-top: 11px;" />
+            </a> -->
+            <!-- 						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown" onmouseover="MouseOver(this)"
+								onmouseout="MouseOut(this)"><a th:href="@{/}"
+								class="dropdown-toggle" data-toggle="dropdown"> <img alt=""
+									th:src="@{images/user-avatar.png}" /><span id="name"></span><b
+									class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a th:href="@{/}">Profile</a></li>
+									<li><a id="modify">修改密码</a></li>
+									<li><a id="signOut">退出登录</a></li>
+								</ul></li>
+						</ul> -->
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+      <!-- main content start-->
+      <div class="main-content" style="height: 660px;">
+        <!--body wrapper start-->
+        <div class="wrapper">
+          <div id="tabs">
+            <div id="scrolltab"></div>
+            <div></div>
+          </div>
+        </div>
+        <!--body wrapper end-->
+
+        
+      </div>
+      <!-- main content end-->
+    </section>
+  </header>
+  <div th:include="base :: bottom" />
+  <div th:include="base :: plugIn" />
+  <script th:src="@{js/index_ims.js}"></script>
+  <div th:include="base :: indexPublic" />
+</body>
+
+</html>

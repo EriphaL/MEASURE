@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* CSS Document */
+/* 界面左右布局 */
+
+/* 遮罩 */
+.zz {
+	z-index: 9997;
+	background-color: #000; /*:rgba(0,0,0,0.3);*/
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+.wz {
+	z-index: 9998;
+	position: absolute;
+	display: none;
+	top: 50%;
+	left: 50%;
+	width: 128px;
+	height: 128px;
+	font-size: 14px;
+	color: #fff;
+	margin-left: -64px;
+	margin-top: -100px;
+}
+
+.wz-p {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.tc {
+	z-index: 9999;
+	background: #fff;
+	display: none;
+	width: 100px;
+	color: #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 100px;
+	margin-left: -50px;
+	border: 1px solid #ccc;
+	line-height: 32px;
+}
+
+/* 弹出框 */
+#dvMsgBox {
+	display: none;
+	position: absolute;
+	font-size: 12px;
+	width: 300px;
+	overflow: hidden;
+	z-index: 9999;
+	border-radius: 3px;
+	font-family: 微软雅黑;
+}
+
+#dvMsgBox .top {
+	height: 40px;
+	background-color: #22b7b5;
+	padding-left: 16px;
+	float: left;
+	width: 100%;
+}
+
+#dvMsgBox .top .right {
+	height: 100%;
+	padding-right: 6px;
+}
+
+#dvMsgBox .top .right .title {
+	height: 100%;
+	line-height: 40px;
+	color: #fff;
+	vertical-align: middle;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+#dvMsgBox .body {
+	background: #fff;
+	padding-left: 10px;
+}
+
+#dvMsgBox .body .right {
+	background: #fff;
+	padding-right: 2px;
+}
+
+#dvMsgBox .body .right .ct {
+	line-height: 28px;
+	vertical-align: middle;
+	width: 100%;
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 14px;
+}
+
+#dvMsgBox .body .right .ct .pro {
+	width: 280px;
+	border: solid 1px #6593cf;
+	height: 25px;
+	background: #ffffff;
+	line-height: 23px;
+	overflow: hidden;
+}
+
+#dvMsgBox .body .right .ct .pro .bg {
+	width: 0%;
+	height: 100%;
+	background: #c9dffc;
+}
+
+#dvMsgBox .bottom {
+	background: #fff;
+	padding-left: 6px;
+}
+
+#dvMsgBox .bottom .right {
+	height: 100%;
+	/*background:transparent url(right-corners.png) no-repeat right bottom;*/
+	padding-right: 6px;
+}
+
+input.showbtn {
+	width: 56px;
+	border-radius: 3px;
+	font-family: 微软雅黑;
+	cursor: pointer;
+	color: #000;
+	border: none;
+	height: 25px;
+	text-align: center;
+	background-color: #fff;
+	text-align: center;
+	margin: 0px auto;
+	border:1px solid #999;
+}
+
+input.btnfocus {
+	background-color: #22b7b5;
+	font-family: 微软雅黑;
+	border-radius: 3px;
+	width: 56px;
+	margin: 0px auto;
+	border: none;
+	height: 25px;
+	cursor: pointer;
+	color: #fff;
+}
+
+#dvMsgBox .icon {
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin-right: 10px;
+}
+/*#dvMsgBox .error{background:url(icon-error.gif) no-repeat;}
+#dvMsgBox .info{background:url(icon-info.gif) no-repeat;}
+#dvMsgBox .warning{background:url(icon-warning.gif) no-repeat;}*/
+#dvMsgBox .clear {
+	clear: both;
+}
+
+#dvMsgBox .height {
+	height: 10px;
+	line-height: 10px;
+}
+
+#ShowBolightBox {
+	display: none;
+	-moz-opacity: 0.5;
+	filter: alpha(opacity = 50);
+	opacity: 0.5;
+	background-color: #000000;
+	z-index: 9998;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#dvMsgBtns {
+	text-align: center;
+	width: 100%;
+}

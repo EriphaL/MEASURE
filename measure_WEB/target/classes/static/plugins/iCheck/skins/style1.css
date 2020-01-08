@@ -1,0 +1,38 @@
+.icheck div, .icheck .disabled {
+    float: left;
+}
+
+.icheck div {
+    margin-right: 10px;
+}
+
+.icheck label {
+    font-weight: normal;
+}
+
+.icheck .checkbox, .icheck .radio {
+    margin-bottom: 10px;
+}
+
+.icheck .single-row {
+    display: inline-block;
+    width: 100%;
+}
+.iradio_square {
+    background-position: -120px 0;
+}
+.square-red{
+	width:80px;
+	float:left;
+}
+.radio label{
+	margin-left: 5px;
+/* 	line-height: 24px; */
+}
+.radio{
+	margin:5px 0 !important;
+}
+.btn-tijiao{
+	padding:1px 6px !important;
+	margin-top:2px;
+}

@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.nbst.dao.mapper.imesweb.ControlChartInfomationMapper">
+	<resultMap id="BaseResultMap"
+		type="com.nbst.model.ControlChartInfomation">
+		<id column="KZTXX_ID" property="kztxxId" jdbcType="INTEGER" />
+		<result column="KZTXX_GROUP_ID" property="kztxxGroupId"
+			jdbcType="INTEGER" />
+		<result column="KZTXX_NUMBER" property="kztxxNumber"
+			jdbcType="VARCHAR" />
+		<result column="KZTXX_TYPE_ID" property="kztxxTypeId"
+			jdbcType="INTEGER" />
+		<result column="KZTXX_DETECTION_ITEM_ID"
+			property="kztxxDetectionItemId" jdbcType="INTEGER" />
+		<result column="KZTXX_SPECIFICATION_UPPER_LIMIT"
+			property="kztxxSpecificationUpperLimit" jdbcType="VARCHAR" />
+		<result column="KZTXX_TARGET_VALUE" property="kztxxTargetValue"
+			jdbcType="VARCHAR" />
+		<result column="KZTXX_SPECIFICATION_DOWN_LIMIT"
+			property="kztxxSpecificationDownLimit" jdbcType="VARCHAR" />
+		<result column="KZTXX_SAMPLE_CAPACITY"
+			property="kztxxSampleCapacity" jdbcType="INTEGER" />
+		<result column="KZTXX_DECIMAL_NUMBER"
+			property="kztxxDecimalNumber" jdbcType="INTEGER" />
+		<result column="KZTXX_ABOVE_UPPER_CONTROL_LIMIT"
+			property="kztxxAboveUpperControlLimit" jdbcType="VARCHAR" />
+		<result column="KZTXX_ABOVE_TARGET_VALUE"
+			property="kztxxAboveTargetValue" jdbcType="VARCHAR" />
+		<result column="KZTXX_ABOVE_LOWER_CONTROL_LIMIT"
+			property="kztxxAboveLowerControlLimit" jdbcType="VARCHAR" />
+		<result column="KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT"
+			property="kztxxFollowGraphUpperControlLimit" jdbcType="VARCHAR" />
+		<result column="KZTXX_FOLLOW_GRAPH_TARGET_VALUE"
+			property="kztxxFollowGraphTargetValue" jdbcType="VARCHAR" />
+		<result column="KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT"
+			property="kztxxFollowGraphLowerControlLimit" jdbcType="VARCHAR" />
+		<result column="KZTXX_CONTROL_CHART_DISCRIPTION"
+			property="kztxxControlChartDiscription" jdbcType="VARCHAR" />
+		<result column="KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE"
+			property="kztxxCustomizedControlChartTitle" jdbcType="VARCHAR" />
+		<result column="KZTXX_DETECTION_DEVICE_ID"
+			property="kztxxDetectionDeviceId" jdbcType="INTEGER" />
+		<result column="KZTXX_DETECTION_FREQUENCY"
+			property="kztxxDetectionFrequency" jdbcType="INTEGER" />
+		<result column="KZTXX_EXTEND1" property="kztxxExtend1"
+			jdbcType="VARCHAR" />
+		<result column="KZTXX_EXTEND2" property="kztxxExtend2"
+			jdbcType="VARCHAR" />
+		<result column="KZTXX_EXTEND3" property="kztxxExtend3"
+			jdbcType="VARCHAR" />
+		<result column="KZTXX_EXTEND4" property="kztxxExtend4"
+			jdbcType="VARCHAR" />
+		<result column="KZTXX_EXTEND5" property="kztxxExtend5"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		KZTXX_ID, KZTXX_GROUP_ID, KZTXX_NUMBER, KZTXX_TYPE_ID,
+		KZTXX_DETECTION_ITEM_ID,
+		KZTXX_SPECIFICATION_UPPER_LIMIT,
+		KZTXX_TARGET_VALUE, KZTXX_SPECIFICATION_DOWN_LIMIT,
+		KZTXX_SAMPLE_CAPACITY,
+		KZTXX_DECIMAL_NUMBER,
+		KZTXX_ABOVE_UPPER_CONTROL_LIMIT, KZTXX_ABOVE_TARGET_VALUE,
+		KZTXX_ABOVE_LOWER_CONTROL_LIMIT,
+		KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT,
+		KZTXX_FOLLOW_GRAPH_TARGET_VALUE,
+		KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT,
+		KZTXX_CONTROL_CHART_DISCRIPTION, KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE,
+		KZTXX_DETECTION_DEVICE_ID,
+		KZTXX_DETECTION_FREQUENCY, KZTXX_EXTEND1,
+		KZTXX_EXTEND2, KZTXX_EXTEND3, KZTXX_EXTEND4,
+		KZTXX_EXTEND5
+	</sql>
+	<select id="findById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from control_chart_infomation
+		where KZTXX_ID =
+		#{kztxxId,jdbcType=INTEGER}
+		and KZTXX_EXTEND1 != 2
+	</select>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from
+		control_chart_infomation
+		where KZTXX_ID = #{kztxxId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert"
+		parameterType="com.nbst.model.ControlChartInfomation"
+		useGeneratedKeys="true" keyProperty="kztxxId">
+		insert into control_chart_infomation
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="kztxxId != null">
+				KZTXX_ID,
+			</if>
+			<if test="kztxxGroupId != null">
+				KZTXX_GROUP_ID,
+			</if>
+			<if test="kztxxNumber != null">
+				KZTXX_NUMBER,
+			</if>
+			<if test="kztxxTypeId != null">
+				KZTXX_TYPE_ID,
+			</if>
+			<if test="kztxxDetectionItemId != null">
+				KZTXX_DETECTION_ITEM_ID,
+			</if>
+			<if test="kztxxSpecificationUpperLimit != null">
+				KZTXX_SPECIFICATION_UPPER_LIMIT,
+			</if>
+			<if test="kztxxTargetValue != null">
+				KZTXX_TARGET_VALUE,
+			</if>
+			<if test="kztxxSpecificationDownLimit != null">
+				KZTXX_SPECIFICATION_DOWN_LIMIT,
+			</if>
+			<if test="kztxxSampleCapacity != null">
+				KZTXX_SAMPLE_CAPACITY,
+			</if>
+			<if test="kztxxDecimalNumber != null">
+				KZTXX_DECIMAL_NUMBER,
+			</if>
+			<if test="kztxxAboveUpperControlLimit != null">
+				KZTXX_ABOVE_UPPER_CONTROL_LIMIT,
+			</if>
+			<if test="kztxxAboveTargetValue != null">
+				KZTXX_ABOVE_TARGET_VALUE,
+			</if>
+			<if test="kztxxAboveLowerControlLimit != null">
+				KZTXX_ABOVE_LOWER_CONTROL_LIMIT,
+			</if>
+			<if test="kztxxFollowGraphUpperControlLimit != null">
+				KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT,
+			</if>
+			<if test="kztxxFollowGraphTargetValue != null">
+				KZTXX_FOLLOW_GRAPH_TARGET_VALUE,
+			</if>
+			<if test="kztxxFollowGraphLowerControlLimit != null">
+				KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT,
+			</if>
+			<if test="kztxxControlChartDiscription != null">
+				KZTXX_CONTROL_CHART_DISCRIPTION,
+			</if>
+			<if test="kztxxCustomizedControlChartTitle != null">
+				KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE,
+			</if>
+			<if test="kztxxDetectionDeviceId != null">
+				KZTXX_DETECTION_DEVICE_ID,
+			</if>
+			<if test="kztxxDetectionFrequency != null">
+				KZTXX_DETECTION_FREQUENCY,
+			</if>
+			<if test="kztxxExtend1 != null">
+				KZTXX_EXTEND1,
+			</if>
+			<if test="kztxxExtend2 != null">
+				KZTXX_EXTEND2,
+			</if>
+			<if test="kztxxExtend3 != null">
+				KZTXX_EXTEND3,
+			</if>
+			<if test="kztxxExtend4 != null">
+				KZTXX_EXTEND4,
+			</if>
+			<if test="kztxxExtend5 != null">
+				KZTXX_EXTEND5,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="kztxxId != null">
+				#{kztxxId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxGroupId != null">
+				#{kztxxGroupId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxNumber != null">
+				#{kztxxNumber,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxTypeId != null">
+				#{kztxxTypeId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxDetectionItemId != null">
+				#{kztxxDetectionItemId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxSpecificationUpperLimit != null">
+				#{kztxxSpecificationUpperLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxTargetValue != null">
+				#{kztxxTargetValue,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxSpecificationDownLimit != null">
+				#{kztxxSpecificationDownLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxSampleCapacity != null">
+				#{kztxxSampleCapacity,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxDecimalNumber != null">
+				#{kztxxDecimalNumber,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxAboveUpperControlLimit != null">
+				#{kztxxAboveUpperControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxAboveTargetValue != null">
+				#{kztxxAboveTargetValue,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxAboveLowerControlLimit != null">
+				#{kztxxAboveLowerControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxFollowGraphUpperControlLimit != null">
+				#{kztxxFollowGraphUpperControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxFollowGraphTargetValue != null">
+				#{kztxxFollowGraphTargetValue,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxFollowGraphLowerControlLimit != null">
+				#{kztxxFollowGraphLowerControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxControlChartDiscription != null">
+				#{kztxxControlChartDiscription,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxCustomizedControlChartTitle != null">
+				#{kztxxCustomizedControlChartTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxDetectionDeviceId != null">
+				#{kztxxDetectionDeviceId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxDetectionFrequency != null">
+				#{kztxxDetectionFrequency,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxExtend1 != null">
+				#{kztxxExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend2 != null">
+				#{kztxxExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend3 != null">
+				#{kztxxExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend4 != null">
+				#{kztxxExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend5 != null">
+				#{kztxxExtend5,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update"
+		parameterType="com.nbst.model.ControlChartInfomation">
+		update control_chart_infomation
+		<set>
+			<if test="kztxxGroupId != null">
+				KZTXX_GROUP_ID = #{kztxxGroupId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxNumber != null">
+				KZTXX_NUMBER = #{kztxxNumber,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxTypeId != null">
+				KZTXX_TYPE_ID = #{kztxxTypeId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxDetectionItemId != null">
+				KZTXX_DETECTION_ITEM_ID =
+				#{kztxxDetectionItemId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxSpecificationUpperLimit != null">
+				KZTXX_SPECIFICATION_UPPER_LIMIT =
+				#{kztxxSpecificationUpperLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxTargetValue != null">
+				KZTXX_TARGET_VALUE =
+				#{kztxxTargetValue,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxSpecificationDownLimit != null">
+				KZTXX_SPECIFICATION_DOWN_LIMIT =
+				#{kztxxSpecificationDownLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxSampleCapacity != null">
+				KZTXX_SAMPLE_CAPACITY =
+				#{kztxxSampleCapacity,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxDecimalNumber != null">
+				KZTXX_DECIMAL_NUMBER =
+				#{kztxxDecimalNumber,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxAboveUpperControlLimit != null">
+				KZTXX_ABOVE_UPPER_CONTROL_LIMIT =
+				#{kztxxAboveUpperControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxAboveTargetValue != null">
+				KZTXX_ABOVE_TARGET_VALUE =
+				#{kztxxAboveTargetValue,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxAboveLowerControlLimit != null">
+				KZTXX_ABOVE_LOWER_CONTROL_LIMIT =
+				#{kztxxAboveLowerControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxFollowGraphUpperControlLimit != null">
+				KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT =
+				#{kztxxFollowGraphUpperControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxFollowGraphTargetValue != null">
+				KZTXX_FOLLOW_GRAPH_TARGET_VALUE =
+				#{kztxxFollowGraphTargetValue,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxFollowGraphLowerControlLimit != null">
+				KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT =
+				#{kztxxFollowGraphLowerControlLimit,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxControlChartDiscription != null">
+				KZTXX_CONTROL_CHART_DISCRIPTION =
+				#{kztxxControlChartDiscription,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxCustomizedControlChartTitle != null">
+				KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE =
+				#{kztxxCustomizedControlChartTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxDetectionDeviceId != null">
+				KZTXX_DETECTION_DEVICE_ID =
+				#{kztxxDetectionDeviceId,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxDetectionFrequency != null">
+				KZTXX_DETECTION_FREQUENCY =
+				#{kztxxDetectionFrequency,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxdatasState != null">
+				KZTXX_DATA_STATE =
+				#{kztxxdatasState,jdbcType=INTEGER},
+			</if>
+			<if test="kztxxExtend1 != null">
+				KZTXX_EXTEND1 = #{kztxxExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend2 != null">
+				KZTXX_EXTEND2 = #{kztxxExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend3 != null">
+				KZTXX_EXTEND3 = #{kztxxExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend4 != null">
+				KZTXX_EXTEND4 = #{kztxxExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="kztxxExtend5 != null">
+				KZTXX_EXTEND5 = #{kztxxExtend5,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where KZTXX_ID = #{kztxxId,jdbcType=INTEGER}
+	</update>
+	<select id="findByCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from control_chart_infomation
+		where 1=1
+		<if test="kztxxGroupId != null">
+			and KZTXX_GROUP_ID = #{kztxxGroupId,jdbcType=INTEGER}
+		</if>
+		<if test="groupIds != null">
+			and KZTXX_GROUP_ID in (
+				<foreach collection="groupIds" item="groupId" index="index" separator="," >  
+	                #{groupId,jdbcType=INTEGER} 
+	            </foreach>
+			)
+		</if>
+		<if test="kztxxNumber != null">
+			and KZTXX_NUMBER = #{kztxxNumber,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxTypeId != null">
+			and KZTXX_TYPE_ID = #{kztxxTypeId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxDetectionItemId != null">
+			and KZTXX_DETECTION_ITEM_ID =
+			#{kztxxDetectionItemId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxSpecificationUpperLimit != null">
+			and KZTXX_SPECIFICATION_UPPER_LIMIT =
+			#{kztxxSpecificationUpperLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxTargetValue != null">
+			and KZTXX_TARGET_VALUE =
+			#{kztxxTargetValue,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxSpecificationDownLimit != null">
+			and KZTXX_SPECIFICATION_DOWN_LIMIT =
+			#{kztxxSpecificationDownLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxSampleCapacity != null">
+			and KZTXX_SAMPLE_CAPACITY =
+			#{kztxxSampleCapacity,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxDecimalNumber != null">
+			and KZTXX_DECIMAL_NUMBER =
+			#{kztxxDecimalNumber,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxAboveUpperControlLimit != null">
+			and KZTXX_ABOVE_UPPER_CONTROL_LIMIT =
+			#{kztxxAboveUpperControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxAboveTargetValue != null">
+			and KZTXX_ABOVE_TARGET_VALUE =
+			#{kztxxAboveTargetValue,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxAboveLowerControlLimit != null">
+			and KZTXX_ABOVE_LOWER_CONTROL_LIMIT =
+			#{kztxxAboveLowerControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxFollowGraphUpperControlLimit != null">
+			and KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT =
+			#{kztxxFollowGraphUpperControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxFollowGraphTargetValue != null">
+			and KZTXX_FOLLOW_GRAPH_TARGET_VALUE =
+			#{kztxxFollowGraphTargetValue,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxFollowGraphLowerControlLimit != null">
+			and KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT =
+			#{kztxxFollowGraphLowerControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxControlChartDiscription != null">
+			and KZTXX_CONTROL_CHART_DISCRIPTION =
+			#{kztxxControlChartDiscription,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxCustomizedControlChartTitle != null">
+			and KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE =
+			#{kztxxCustomizedControlChartTitle,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxDetectionDeviceId != null">
+			and KZTXX_DETECTION_DEVICE_ID =
+			#{kztxxDetectionDeviceId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxDetectionFrequency != null">
+			and KZTXX_DETECTION_FREQUENCY =
+			#{kztxxDetectionFrequency,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxdatasState != null">
+			and KZTXX_DATA_STATE =
+			#{kztxxdatasState,jdbcType=INTEGER},
+			</if>
+		<if test="kztxxExtend1 != null">
+			and KZTXX_EXTEND1 = #{kztxxExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend2 != null">
+			and KZTXX_EXTEND2 = #{kztxxExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend3 != null">
+			and KZTXX_EXTEND3 = #{kztxxExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend4 != null">
+			and KZTXX_EXTEND4 = #{kztxxExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend5 != null">
+			and KZTXX_EXTEND5 = #{kztxxExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="count" resultType="java.lang.Integer"
+		parameterType="Map">
+		select count(*) from control_chart_infomation
+		left join control_chart_infomation_hierarchical_information_relationship relationship
+			on control_chart_infomation.KZTXX_ID=relationship.KZTXXCCGL_CONTROL_CHART_ID
+		where 1=1
+		<if test="kztxxGroupId != null">
+			and KZTXX_GROUP_ID = #{kztxxGroupId,jdbcType=INTEGER}
+		</if>
+		<if test="groupIds != null">
+			and KZTXX_GROUP_ID in (
+				<foreach collection="groupIds" item="groupId" index="index" separator="," >  
+	                #{groupId,jdbcType=INTEGER} 
+	            </foreach>
+			)
+		</if>
+		<if test="kztxxNumber != null">
+			and KZTXX_NUMBER = #{kztxxNumber,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxTypeId != null">
+			and KZTXX_TYPE_ID = #{kztxxTypeId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxDetectionItemId != null">
+			and KZTXX_DETECTION_ITEM_ID =
+			#{kztxxDetectionItemId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxSpecificationUpperLimit != null">
+			and KZTXX_SPECIFICATION_UPPER_LIMIT =
+			#{kztxxSpecificationUpperLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxTargetValue != null">
+			and KZTXX_TARGET_VALUE =
+			#{kztxxTargetValue,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxSpecificationDownLimit != null">
+			and KZTXX_SPECIFICATION_DOWN_LIMIT =
+			#{kztxxSpecificationDownLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxSampleCapacity != null">
+			and KZTXX_SAMPLE_CAPACITY =
+			#{kztxxSampleCapacity,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxDecimalNumber != null">
+			and KZTXX_DECIMAL_NUMBER =
+			#{kztxxDecimalNumber,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxAboveUpperControlLimit != null">
+			and KZTXX_ABOVE_UPPER_CONTROL_LIMIT =
+			#{kztxxAboveUpperControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxAboveTargetValue != null">
+			and KZTXX_ABOVE_TARGET_VALUE =
+			#{kztxxAboveTargetValue,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxAboveLowerControlLimit != null">
+			and KZTXX_ABOVE_LOWER_CONTROL_LIMIT =
+			#{kztxxAboveLowerControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxFollowGraphUpperControlLimit != null">
+			and KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT =
+			#{kztxxFollowGraphUpperControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxFollowGraphTargetValue != null">
+			and KZTXX_FOLLOW_GRAPH_TARGET_VALUE =
+			#{kztxxFollowGraphTargetValue,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxFollowGraphLowerControlLimit != null">
+			and KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT =
+			#{kztxxFollowGraphLowerControlLimit,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxControlChartDiscription != null">
+			and KZTXX_CONTROL_CHART_DISCRIPTION =
+			#{kztxxControlChartDiscription,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxCustomizedControlChartTitle != null">
+			and KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE =
+			#{kztxxCustomizedControlChartTitle,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxDetectionDeviceId != null">
+			and KZTXX_DETECTION_DEVICE_ID =
+			#{kztxxDetectionDeviceId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxDetectionFrequency != null">
+			and KZTXX_DETECTION_FREQUENCY =
+			#{kztxxDetectionFrequency,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxdatasState != null">
+			and KZTXX_DATA_STATE =
+			#{kztxxdatasState,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxExtend1 != null">
+			and KZTXX_EXTEND1 = #{kztxxExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend2 != null">
+			and KZTXX_EXTEND2 = #{kztxxExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend3 != null">
+			and KZTXX_EXTEND3 = #{kztxxExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend4 != null">
+			and KZTXX_EXTEND4 = #{kztxxExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxExtend5 != null">
+			and KZTXX_EXTEND5 = #{kztxxExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="kztxxTypeOneId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_ONE_ID = #{kztxxTypeOneId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeTwoId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_TWO_ID = #{kztxxTypeTwoId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeThreeId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_THREE_ID = #{kztxxTypeThreeId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeFourId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_ID = #{kztxxTypeFourId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeFiveId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_ID = #{kztxxTypeFiveId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeSixId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_SIX_ID = #{kztxxTypeSixId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeSevenId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID = #{kztxxTypeSevenId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeEightId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID = #{kztxxTypeEightId,jdbcType=INTEGER}
+		</if>
+		<if test="kztxxTypeNineId != null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_NINE_ID = #{kztxxTypeNineId,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="findByGroupIdOfCountFigure" resultType="Map" parameterType="map">
+		select
+		chart.KZTXX_ID id,chart.KZTXX_NUMBER number
+		from control_chart_infomation chart
+		left
+		join control_chart_type type on type.KZTLX_ID = chart.KZTXX_TYPE_ID
+		where chart.KZTXX_GROUP_ID in (
+			<foreach collection="groupIds" item="groupId" index="index" separator="," >  
+                #{groupId,jdbcType=INTEGER} 
+            </foreach>
+		)
+		and
+		chart.KZTXX_EXTEND1 != 2
+		and type.KZTLX_NAME in (
+			"P", "nP", "U", "C", "Y"
+		) 
+		order by chart.KZTXX_GROUP_ID
+	</select>
+	<select id="findByConditionOfMeasuringFigure" resultType="map" parameterType="java.lang.Integer">
+		select
+		control_chart_infomation.KZTXX_ID id,
+		control_chart_infomation.KZTXX_DETECTION_ITEM_ID detectionItemId,
+		control_chart_infomation.KZTXX_SAMPLE_CAPACITY sampleCapacity,
+		control_chart_infomation.KZTXX_TYPE_ID typeId,
+		control_chart_infomation.KZTXX_SPECIFICATION_UPPER_LIMIT upperLimit,
+		control_chart_infomation.KZTXX_TARGET_VALUE targetValue,
+		control_chart_infomation.KZTXX_SPECIFICATION_DOWN_LIMIT downLimit,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_ONE_STATE=1,type_level_one.CCLXONE_NAME,null) cc1,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_TWO_STATE=1,type_level_two.CCLXTWO_NAME,null) cc2,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_THREE_STATE=1,type_level_three.CCLXTHREE_NAME,null) cc3,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_STATE=1,type_level_four.CCLXFOUR_NAME,null) cc4,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_STATE=1,type_level_five.CCLXFIVE_NAME,null) cc5,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SIX_STATE=1,type_level_six.CCLXSIX_NAME,null) cc6,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE=1,type_level_seven.CCLXSEVEN_NAME,null) cc7,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE=1,type_level_eight.CCLXEIGHT_NAME,null) cc8,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_NINE_STATE=1,type_level_nine.CCLXNINE_NAME,null) cc9
+		from control_chart_infomation
+		left join control_chart_type type on type.KZTLX_ID = control_chart_infomation.KZTXX_TYPE_ID
+		left join control_chart_infomation_hierarchical_information_relationship relationship on relationship.KZTXXCCGL_CONTROL_CHART_ID = control_chart_infomation.KZTXX_ID
+		left join type_level_one on relationship.KZTXXCCGL_TYPE_LEVEL_ONE_ID = type_level_one.CCLXONE_ID
+		left join type_level_two on relationship.KZTXXCCGL_TYPE_LEVEL_TWO_ID = type_level_two.CCLXTWO_ID
+		left join type_level_three on
+		relationship.KZTXXCCGL_TYPE_LEVEL_THREE_ID = type_level_three.CCLXTHREE_ID
+		left join type_level_four on
+		relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_ID = type_level_four.CCLXFOUR_ID
+		left join type_level_five on
+		relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_ID = type_level_five.CCLXFIVE_ID
+		left join type_level_six on
+		relationship.KZTXXCCGL_TYPE_LEVEL_SIX_ID = type_level_six.CCLXSIX_ID
+		left join type_level_seven on
+		relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID = type_level_seven.CCLXSEVEN_ID
+		left join type_level_eight on
+		relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID = type_level_eight.CCLXEIGHT_ID
+		left join type_level_nine on
+		relationship.KZTXXCCGL_TYPE_LEVEL_NINE_ID = type_level_nine.CCLXNINE_ID
+		where control_chart_infomation.KZTXX_GROUP_ID = #{kztxxGroupId,jdbcType=INTEGER}
+		and control_chart_infomation.KZTXX_EXTEND1 != 2
+		and type.KZTLX_NAME in ("XR", "XS", "IMR")
+<!-- 		order by KZTXX_NUMBER -->
+	</select>
+	<select id="findListByGroupId" resultType="map" parameterType="map">
+		select
+		control_chart_infomation.KZTXX_ID id,
+		control_chart_infomation.KZTXX_NUMBER bh,control_chart_infomation.KZTXX_SAMPLE_CAPACITY ybrl,
+		control_chart_infomation.KZTXX_SPECIFICATION_UPPER_LIMIT ggsx,
+		control_chart_infomation.KZTXX_SPECIFICATION_DOWN_LIMIT ggxx,
+		control_chart_infomation.KZTXX_TARGET_VALUE mbz,
+		control_chart_infomation.KZTXX_EXTEND2 gxsj,
+		control_chart_infomation.KZTXX_DATA_STATE jcsjState,
+		detection_device.JCSB_ID sbId,
+		detection_device.JCSB_NAME sbName,
+		detection_item.JCXM_ID jcxmId,detection_item.JCXM_NAME jcxm,
+		control_chart_type.KZTLX_ID tlId,control_chart_type.KZTLX_NAME tl,
+		yh.YH_NAME gxyh,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_ONE_STATE=1,type_level_one.CCLXONE_NAME,null) cc1,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_TWO_STATE=1,type_level_two.CCLXTWO_NAME,null) cc2,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_THREE_STATE=1,type_level_three.CCLXTHREE_NAME,null) cc3,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_STATE=1,type_level_four.CCLXFOUR_NAME,null) cc4,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_STATE=1,type_level_five.CCLXFIVE_NAME,null) cc5,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SIX_STATE=1,type_level_six.CCLXSIX_NAME,null) cc6,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE=1,type_level_seven.CCLXSEVEN_NAME,null) cc7,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE=1,type_level_eight.CCLXEIGHT_NAME,null) cc8,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_NINE_STATE=1,type_level_nine.CCLXNINE_NAME,null) cc9
+		from control_chart_infomation
+		left join detection_device on
+			detection_device.JCSB_ID = control_chart_infomation.KZTXX_DETECTION_DEVICE_ID
+		left join detection_item on
+			detection_item.JCXM_ID = control_chart_infomation.KZTXX_DETECTION_ITEM_ID
+		left join control_chart_type on 
+			control_chart_type.KZTLX_ID = control_chart_infomation.KZTXX_TYPE_ID
+		left join user yh on yh.YH_ID = control_chart_infomation.KZTXX_EXTEND3
+		left join control_chart_infomation_hierarchical_information_relationship relationship on 
+			relationship.KZTXXCCGL_CONTROL_CHART_ID = control_chart_infomation.KZTXX_ID
+		left join type_level_one on
+			relationship.KZTXXCCGL_TYPE_LEVEL_ONE_ID = type_level_one.CCLXONE_ID
+		left join type_level_two on 
+			relationship.KZTXXCCGL_TYPE_LEVEL_TWO_ID = type_level_two.CCLXTWO_ID
+		left join type_level_three on
+			relationship.KZTXXCCGL_TYPE_LEVEL_THREE_ID = type_level_three.CCLXTHREE_ID
+		left join type_level_four on
+			relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_ID = type_level_four.CCLXFOUR_ID
+		left join type_level_five on
+			relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_ID = type_level_five.CCLXFIVE_ID
+		left join type_level_six on
+			relationship.KZTXXCCGL_TYPE_LEVEL_SIX_ID = type_level_six.CCLXSIX_ID
+		left join type_level_seven on
+			relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID = type_level_seven.CCLXSEVEN_ID
+		left join type_level_eight on
+			relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID = type_level_eight.CCLXEIGHT_ID
+		left join type_level_nine on
+			relationship.KZTXXCCGL_TYPE_LEVEL_NINE_ID = type_level_nine.CCLXNINE_ID
+		where
+		control_chart_infomation.KZTXX_EXTEND1 = #{kztxxExtend1,jdbcType=VARCHAR}
+		and control_chart_infomation.KZTXX_GROUP_ID in (
+			<foreach collection="groupIds" item="groupId" index="index" separator="," >  
+                #{groupId,jdbcType=INTEGER} 
+            </foreach>
+		)
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if> 
+	</select>
+	<!-- 控制图过滤 -->
+	<select id="findListByControlFilter" resultType="map" parameterType="map">
+		select DISTINCT
+		control_chart_infomation.KZTXX_ID id,
+		control_chart_infomation.KZTXX_NUMBER bh,control_chart_infomation.KZTXX_SAMPLE_CAPACITY ybrl,
+		control_chart_infomation.KZTXX_SPECIFICATION_UPPER_LIMIT ggsx,
+		control_chart_infomation.KZTXX_SPECIFICATION_DOWN_LIMIT ggxx,
+		control_chart_infomation.KZTXX_TARGET_VALUE mbz,
+		control_chart_infomation.KZTXX_EXTEND2 gxsj,
+		control_chart_infomation.KZTXX_DATA_STATE jcsjState,
+		detection_device.JCSB_ID sbId,
+		detection_device.JCSB_NAME sbName,
+		detection_item.JCXM_ID jcxmId,detection_item.JCXM_NAME jcxm,
+		control_chart_type.KZTLX_ID tlId,control_chart_type.KZTLX_NAME tl,
+		yh.YH_NAME gxyh,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_ONE_STATE=1,type_level_one.CCLXONE_NAME,null) cc1,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_TWO_STATE=1,type_level_two.CCLXTWO_NAME,null) cc2,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_THREE_STATE=1,type_level_three.CCLXTHREE_NAME,null) cc3,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_STATE=1,type_level_four.CCLXFOUR_NAME,null) cc4,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_STATE=1,type_level_five.CCLXFIVE_NAME,null) cc5,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SIX_STATE=1,type_level_six.CCLXSIX_NAME,null) cc6,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE=1,type_level_seven.CCLXSEVEN_NAME,null) cc7,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE=1,type_level_eight.CCLXEIGHT_NAME,null) cc8,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_NINE_STATE=1,type_level_nine.CCLXNINE_NAME,null) cc9
+		from control_chart_infomation
+		left join detection_device on
+			detection_device.JCSB_ID = control_chart_infomation.KZTXX_DETECTION_DEVICE_ID
+		left join detection_item on
+			detection_item.JCXM_ID = control_chart_infomation.KZTXX_DETECTION_ITEM_ID
+		left join control_chart_type on 
+			control_chart_type.KZTLX_ID = control_chart_infomation.KZTXX_TYPE_ID
+		left join user yh on yh.YH_ID = control_chart_infomation.KZTXX_EXTEND3
+		left join control_chart_infomation_hierarchical_information_relationship relationship on 
+			relationship.KZTXXCCGL_CONTROL_CHART_ID = control_chart_infomation.KZTXX_ID
+		left join detection_data on 
+			detection_data.JCSJ_CONTROL_CHART_ID=control_chart_infomation.KZTXX_ID
+		left join type_level_one on
+			relationship.KZTXXCCGL_TYPE_LEVEL_ONE_ID = type_level_one.CCLXONE_ID
+		left join type_level_two on 
+			relationship.KZTXXCCGL_TYPE_LEVEL_TWO_ID = type_level_two.CCLXTWO_ID
+		left join type_level_three on
+			relationship.KZTXXCCGL_TYPE_LEVEL_THREE_ID = type_level_three.CCLXTHREE_ID
+		left join type_level_four on
+			relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_ID = type_level_four.CCLXFOUR_ID
+		left join type_level_five on
+			relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_ID = type_level_five.CCLXFIVE_ID
+		left join type_level_six on
+			relationship.KZTXXCCGL_TYPE_LEVEL_SIX_ID = type_level_six.CCLXSIX_ID
+		left join type_level_seven on
+			relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID = type_level_seven.CCLXSEVEN_ID
+		left join type_level_eight on
+			relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID = type_level_eight.CCLXEIGHT_ID
+		left join type_level_nine on
+			relationship.KZTXXCCGL_TYPE_LEVEL_NINE_ID = type_level_nine.CCLXNINE_ID
+		where
+		control_chart_infomation.KZTXX_EXTEND1 = #{kztxxExtend1,jdbcType=VARCHAR}
+		and control_chart_infomation.KZTXX_GROUP_ID in (
+			<foreach collection="groupIds" item="groupId" index="index" separator="," >  
+                #{groupId,jdbcType=INTEGER} 
+            </foreach>
+		)
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if> 
+		<if test="Number !=null">
+			and control_chart_infomation.KZTXX_NUMBER=#{number,jdbcType=VARCHAR}
+		</if> 
+		<if test="detectionItemId !=null">
+			and control_chart_infomation.KZTXX_DETECTION_ITEM_ID=#{detectionItemId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeId !=null">
+			and control_chart_infomation.KZTXX_TYPE_ID=#{typeId,jdbcType=INTEGER}
+		</if> 
+		<if test="sampleCapacity !=null">
+			and control_chart_infomation.KZTXX_SAMPLE_CAPACITY=#{sampleCapacity,jdbcType=INTEGER}
+		</if> 
+		<if test="datasState !=null">
+			and control_chart_infomation.KZTXX_DATA_STATE=#{datasState,jdbcType=INTEGER}
+		</if> 
+		<if test="typeOneId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_ONE_ID=#{typeOneId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeTwoId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_TWO_ID=#{typeTwoId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeThreeId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_THREE_ID=#{typeThreeId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeFourId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_ID=#{typeFourId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeFiveId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_ID=#{typeFiveId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeSixId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_SIX_ID=#{typeSixId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeSevenId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID=#{typeSevenId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeEightId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID=#{typeEightId,jdbcType=INTEGER}
+		</if> 
+		<if test="typeNineId !=null">
+			and relationship.KZTXXCCGL_TYPE_LEVEL_NINE_ID=#{typeNineId,jdbcType=INTEGER}
+		</if> 
+		<if test="startTime!=null and endTime!= null">
+			and detection_data.JCSJ_RECORD_TIME BETWEEN
+			#{startTime,jdbcType=BIGINT}
+			AND
+			#{endTime,jdbcType=BIGINT}
+		</if>
+	</select>
+	<select id="findByControlChartId" resultType="map" parameterType="java.lang.Integer">
+		select
+		control_chart_infomation.KZTXX_NUMBER bh,control_chart_infomation.KZTXX_GROUP_ID groupId,
+		control_chart_infomation.KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE title,detection_item.JCXM_NAME jcxm,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_ONE_STATE=1,type_level_one.CCLXONE_NAME,null) cc1,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_TWO_STATE=1,type_level_two.CCLXTWO_NAME,null) cc2,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_THREE_STATE=1,type_level_three.CCLXTHREE_NAME,null) cc3,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_STATE=1,type_level_four.CCLXFOUR_NAME,null) cc4,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_STATE=1,type_level_five.CCLXFIVE_NAME,null) cc5,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SIX_STATE=1,type_level_six.CCLXSIX_NAME,null) cc6,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE=1,type_level_seven.CCLXSEVEN_NAME,null) cc7,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE=1,type_level_eight.CCLXEIGHT_NAME,null) cc8,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_NINE_STATE=1,type_level_nine.CCLXNINE_NAME,null) cc9
+		from control_chart_infomation
+		left join detection_item on
+		detection_item.JCXM_ID = control_chart_infomation.KZTXX_DETECTION_ITEM_ID
+		left join control_chart_infomation_hierarchical_information_relationship relationship on 
+		relationship.KZTXXCCGL_CONTROL_CHART_ID = control_chart_infomation.KZTXX_ID
+		left join type_level_one on
+		relationship.KZTXXCCGL_TYPE_LEVEL_ONE_ID = type_level_one.CCLXONE_ID
+		left join type_level_two on 
+		relationship.KZTXXCCGL_TYPE_LEVEL_TWO_ID = type_level_two.CCLXTWO_ID
+		left join type_level_three on
+		relationship.KZTXXCCGL_TYPE_LEVEL_THREE_ID = type_level_three.CCLXTHREE_ID
+		left join type_level_four on
+		relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_ID = type_level_four.CCLXFOUR_ID
+		left join type_level_five on
+		relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_ID = type_level_five.CCLXFIVE_ID
+		left join type_level_six on
+		relationship.KZTXXCCGL_TYPE_LEVEL_SIX_ID = type_level_six.CCLXSIX_ID
+		left join type_level_seven on
+		relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID = type_level_seven.CCLXSEVEN_ID
+		left join type_level_eight on
+		relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID = type_level_eight.CCLXEIGHT_ID
+		left join type_level_nine on
+		relationship.KZTXXCCGL_TYPE_LEVEL_NINE_ID = type_level_nine.CCLXNINE_ID
+		where
+		control_chart_infomation.KZTXX_ID = #{kztxxId,jdbcType=INTEGER}
+	</select>
+	<select id="findNumberItemByControlChartId" resultType="java.lang.String" parameterType="java.lang.Integer">
+		select
+		CONCAT(control_chart_infomation.KZTXX_NUMBER,"-",detection_item.JCXM_NAME)
+		from control_chart_infomation
+		left join detection_item on
+		detection_item.JCXM_ID = control_chart_infomation.KZTXX_DETECTION_ITEM_ID
+		where
+		control_chart_infomation.KZTXX_ID = #{kztxxId,jdbcType=INTEGER}
+	</select>
+	<select id="findByConditionOfCountFigure" resultType="map" parameterType="java.lang.Integer">
+		select
+		control_chart_infomation.KZTXX_ID id,
+		control_chart_infomation.KZTXX_GROUP_ID groupId,
+		control_chart_infomation.KZTXX_DETECTION_ITEM_ID detectionItemId,
+		control_chart_infomation.KZTXX_SAMPLE_CAPACITY sampleCapacity,
+		control_chart_infomation.KZTXX_TYPE_ID typeId,
+		control_chart_infomation.KZTXX_SPECIFICATION_UPPER_LIMIT upperLimit,
+		control_chart_infomation.KZTXX_TARGET_VALUE targetValue,
+		control_chart_infomation.KZTXX_SPECIFICATION_DOWN_LIMIT downLimit,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_ONE_STATE=1,type_level_one.CCLXONE_NAME,null) cc1,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_TWO_STATE=1,type_level_two.CCLXTWO_NAME,null) cc2,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_THREE_STATE=1,type_level_three.CCLXTHREE_NAME,null) cc3,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_STATE=1,type_level_four.CCLXFOUR_NAME,null) cc4,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_STATE=1,type_level_five.CCLXFIVE_NAME,null) cc5,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SIX_STATE=1,type_level_six.CCLXSIX_NAME,null) cc6,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_STATE=1,type_level_seven.CCLXSEVEN_NAME,null) cc7,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_STATE=1,type_level_eight.CCLXEIGHT_NAME,null) cc8,
+		if(relationship.KZTXXCCGL_TYPE_LEVEL_NINE_STATE=1,type_level_nine.CCLXNINE_NAME,null) cc9
+		from control_chart_infomation
+		left join control_chart_type type on type.KZTLX_ID = control_chart_infomation.KZTXX_TYPE_ID
+		left join control_chart_infomation_hierarchical_information_relationship relationship on relationship.KZTXXCCGL_CONTROL_CHART_ID = control_chart_infomation.KZTXX_ID
+		left join type_level_one on relationship.KZTXXCCGL_TYPE_LEVEL_ONE_ID = type_level_one.CCLXONE_ID
+		left join type_level_two on relationship.KZTXXCCGL_TYPE_LEVEL_TWO_ID = type_level_two.CCLXTWO_ID
+		left join type_level_three on
+		relationship.KZTXXCCGL_TYPE_LEVEL_THREE_ID = type_level_three.CCLXTHREE_ID
+		left join type_level_four on
+		relationship.KZTXXCCGL_TYPE_LEVEL_FOUR_ID = type_level_four.CCLXFOUR_ID
+		left join type_level_five on
+		relationship.KZTXXCCGL_TYPE_LEVEL_FIVE_ID = type_level_five.CCLXFIVE_ID
+		left join type_level_six on
+		relationship.KZTXXCCGL_TYPE_LEVEL_SIX_ID = type_level_six.CCLXSIX_ID
+		left join type_level_seven on
+		relationship.KZTXXCCGL_TYPE_LEVEL_SEVEN_ID = type_level_seven.CCLXSEVEN_ID
+		left join type_level_eight on
+		relationship.KZTXXCCGL_TYPE_LEVEL_EIGHT_ID = type_level_eight.CCLXEIGHT_ID
+		left join type_level_nine on
+		relationship.KZTXXCCGL_TYPE_LEVEL_NINE_ID = type_level_nine.CCLXNINE_ID
+		where control_chart_infomation.KZTXX_ID = #{kztxxId,jdbcType=INTEGER}
+	</select>
+	<insert id="copeByControlChartIdAndGroupId" parameterType="map" useGeneratedKeys="true" keyProperty="kztxxId">
+		insert into control_chart_infomation
+		(KZTXX_GROUP_ID,KZTXX_NUMBER,KZTXX_TYPE_ID,KZTXX_DETECTION_ITEM_ID,KZTXX_SPECIFICATION_UPPER_LIMIT,
+		KZTXX_TARGET_VALUE,KZTXX_SPECIFICATION_DOWN_LIMIT,KZTXX_SAMPLE_CAPACITY,KZTXX_DECIMAL_NUMBER,
+		<if test="state == 1">
+		KZTXX_ABOVE_UPPER_CONTROL_LIMIT,KZTXX_ABOVE_TARGET_VALUE,KZTXX_ABOVE_LOWER_CONTROL_LIMIT,
+		KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT,KZTXX_FOLLOW_GRAPH_TARGET_VALUE,KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT,
+		</if>
+		KZTXX_CONTROL_CHART_DISCRIPTION,KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE,KZTXX_DETECTION_DEVICE_ID,
+		KZTXX_DETECTION_FREQUENCY,KZTXX_EXTEND1
+		<if test="time != null">
+		,KZTXX_EXTEND2
+		</if>
+		<if test="yhId != null">
+		,KZTXX_EXTEND3
+		</if>
+		<if test="state == 1">
+		,KZTXX_EXTEND4
+		</if>
+		)
+		select 
+		<if test="groupId != null">
+			replace(KZTXX_GROUP_ID,KZTXX_GROUP_ID,#{groupId,jdbcType=INTEGER}),
+		</if>
+		<if test="groupId == null">
+			KZTXX_GROUP_ID,
+		</if>
+		replace(KZTXX_NUMBER,KZTXX_NUMBER,CONCAT(KZTXX_NUMBER," - 副本",KZTXX_EXTEND5)),
+		KZTXX_TYPE_ID,KZTXX_DETECTION_ITEM_ID,KZTXX_SPECIFICATION_UPPER_LIMIT,
+		KZTXX_TARGET_VALUE,KZTXX_SPECIFICATION_DOWN_LIMIT,KZTXX_SAMPLE_CAPACITY,KZTXX_DECIMAL_NUMBER,
+		<if test="state == 1">
+		KZTXX_ABOVE_UPPER_CONTROL_LIMIT,KZTXX_ABOVE_TARGET_VALUE,KZTXX_ABOVE_LOWER_CONTROL_LIMIT,
+		KZTXX_FOLLOW_GRAPH_UPPER_CONTROL_LIMIT,KZTXX_FOLLOW_GRAPH_TARGET_VALUE,KZTXX_FOLLOW_GRAPH_LOWER_CONTROL_LIMIT,
+		</if>
+		KZTXX_CONTROL_CHART_DISCRIPTION,KZTXX_CUSTOMIZED_CONTROL_CHART_TITLE,KZTXX_DETECTION_DEVICE_ID,
+		KZTXX_DETECTION_FREQUENCY,KZTXX_EXTEND1
+		<if test="time != null">
+			,replace(KZTXX_EXTEND2,KZTXX_EXTEND2,#{time,jdbcType=VARCHAR})
+		</if>
+		<if test="yhId != null">
+			,replace(KZTXX_EXTEND3,KZTXX_EXTEND3,#{yhId,jdbcType=VARCHAR})
+		</if>
+		<if test="state == 1">
+		,KZTXX_EXTEND4
+		</if>
+		from control_chart_infomation
+		where KZTXX_ID in (
+			<if test="ids != null">
+				<foreach collection="ids" item="id" index="index" separator=",">
+					#{id,jdbcType=INTEGER}
+				</foreach>
+			</if>
+			<if test="Id != null">
+				#{Id,jdbcType=INTEGER}
+			</if>
+		)
+	</insert>
+	<update id="updateCopeCount" parameterType="java.lang.Integer">
+		update control_chart_infomation
+		<set>
+			KZTXX_EXTEND5 = if(KZTXX_EXTEND5 is null,1,KZTXX_EXTEND5 + 1)
+		</set>
+		where KZTXX_ID = #{kztxxId,jdbcType=INTEGER}
+	</update>
+	<select id="findControlChartIdByAutomaticEntryState" resultType="map">
+		select
+			control_chart_infomation.KZTXX_ID id,
+			control_chart_type.KZTLX_NAME typeName,
+			detection_item.JCXM_CODE itemCode,
+			detection_device.JCSB_CODE sbCode
+		from control_chart_infomation
+		left join detection_item on 
+			detection_item.JCXM_ID = control_chart_infomation.KZTXX_DETECTION_ITEM_ID
+		left join detection_device on 
+			detection_device.JCSB_ID = control_chart_infomation.KZTXX_DETECTION_DEVICE_ID
+		left join control_chart_type on 
+			control_chart_type.KZTLX_ID = control_chart_infomation.KZTXX_TYPE_ID
+		where KZTXX_DETECTION_DEVICE_ID is not null
+		and KZTXX_DETECTION_FREQUENCY = 1
+	</select>
+</mapper>

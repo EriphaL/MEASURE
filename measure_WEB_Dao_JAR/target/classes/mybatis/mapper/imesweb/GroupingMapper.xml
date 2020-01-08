@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nbst.dao.mapper.imesweb.GroupingMapper">
+	<resultMap id="BaseResultMap" type="com.nbst.model.Grouping">
+		<id column="FZ_ID" property="fzId" jdbcType="INTEGER" />
+		<result column="FZ_NAME" property="fzName" jdbcType="VARCHAR" />
+		<result column="FZ_ERP_CODE" property="fzErpCode"
+			jdbcType="VARCHAR" />
+		<result column="FZ_REMARK" property="fzRemark"
+			jdbcType="VARCHAR" />
+		<result column="FZ_EXTEND1" property="fzExtend1"
+			jdbcType="VARCHAR" />
+		<result column="FZ_EXTEND2" property="fzExtend2"
+			jdbcType="VARCHAR" />
+		<result column="FZ_EXTEND3" property="fzExtend3"
+			jdbcType="VARCHAR" />
+		<result column="FZ_EXTEND4" property="fzExtend4"
+			jdbcType="VARCHAR" />
+		<result column="FZ_EXTEND5" property="fzExtend5"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		FZ_ID, FZ_NAME, FZ_ERP_CODE, FZ_REMARK, FZ_EXTEND1,
+		FZ_EXTEND2, FZ_EXTEND3,
+		FZ_EXTEND4,
+		FZ_EXTEND5
+	</sql>
+	<select id="findById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from `grouping`
+		where FZ_ID = #{fzId,jdbcType=INTEGER}
+	</select>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from `grouping`
+		where
+		FZ_ID = #{fzId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.nbst.model.Grouping"
+		useGeneratedKeys="true" keyProperty="fzId">
+		insert into grouping
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="fzId != null">
+				FZ_ID,
+			</if>
+			<if test="fzName != null">
+				FZ_NAME,
+			</if>
+			<if test="fzErpCode != null">
+				FZ_ERP_CODE,
+			</if>
+			<if test="fzRemark != null">
+				FZ_REMARK,
+			</if>
+			<if test="fzExtend1 != null">
+				FZ_EXTEND1,
+			</if>
+			<if test="fzExtend2 != null">
+				FZ_EXTEND2,
+			</if>
+			<if test="fzExtend3 != null">
+				FZ_EXTEND3,
+			</if>
+			<if test="fzExtend4 != null">
+				FZ_EXTEND4,
+			</if>
+			<if test="fzExtend5 != null">
+				FZ_EXTEND5,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="fzId != null">
+				#{fzId,jdbcType=INTEGER},
+			</if>
+			<if test="fzName != null">
+				#{fzName,jdbcType=VARCHAR},
+			</if>
+			<if test="fzErpCode != null">
+				#{fzErpCode,jdbcType=VARCHAR},
+			</if>
+			<if test="fzRemark != null">
+				#{fzRemark,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend1 != null">
+				#{fzExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend2 != null">
+				#{fzExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend3 != null">
+				#{fzExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend4 != null">
+				#{fzExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend5 != null">
+				#{fzExtend5,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.nbst.model.Grouping">
+		update `grouping`
+		<set>
+			<if test="fzName != null">
+				FZ_NAME = #{fzName,jdbcType=VARCHAR},
+			</if>
+			<if test="fzErpCode != null">
+				FZ_ERP_CODE = #{fzErpCode,jdbcType=VARCHAR},
+			</if>
+			<if test="fzRemark != null">
+				FZ_REMARK = #{fzRemark,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend1 != null">
+				FZ_EXTEND1 = #{fzExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend2 != null">
+				FZ_EXTEND2 = #{fzExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend3 != null">
+				FZ_EXTEND3 = #{fzExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend4 != null">
+				FZ_EXTEND4 = #{fzExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="fzExtend5 != null">
+				FZ_EXTEND5 = #{fzExtend5,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where FZ_ID = #{fzId,jdbcType=INTEGER}
+	</update>
+	<select id="findByCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from `grouping`
+		where 1=1
+		<if test="fzName != null">
+			and FZ_NAME = #{fzName,jdbcType=VARCHAR}
+		</if>
+		<if test="fzErpCode != null">
+			and FZ_ERP_CODE = #{fzErpCode,jdbcType=VARCHAR}
+		</if>
+		<if test="fzRemark != null">
+			and FZ_REMARK = #{fzRemark,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend1 != null">
+			and FZ_EXTEND1 = #{fzExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend2 != null">
+			and FZ_EXTEND2 = #{fzExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend3 != null">
+			and FZ_EXTEND3 = #{fzExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend4 != null">
+			and FZ_EXTEND4 = #{fzExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend5 != null">
+			and FZ_EXTEND5 = #{fzExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="count" resultType="java.lang.Integer"
+		parameterType="Map">
+		select count(*) from `grouping`
+		where 1=1
+		<if test="fzName != null">
+			and FZ_NAME = #{fzName,jdbcType=VARCHAR}
+		</if>
+		<if test="fzErpCode != null">
+			and FZ_ERP_CODE = #{fzErpCode,jdbcType=VARCHAR}
+		</if>
+		<if test="fzRemark != null">
+			and FZ_REMARK = #{fzRemark,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend1 != null">
+			and FZ_EXTEND1 = #{fzExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend2 != null">
+			and FZ_EXTEND2 = #{fzExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend3 != null">
+			and FZ_EXTEND3 = #{fzExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend4 != null">
+			and FZ_EXTEND4 = #{fzExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="fzExtend5 != null">
+			and FZ_EXTEND5 = #{fzExtend5,jdbcType=VARCHAR}
+		</if>
+	</select>
+</mapper>

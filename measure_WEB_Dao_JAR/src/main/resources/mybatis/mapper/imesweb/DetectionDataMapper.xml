@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.nbst.dao.mapper.imesweb.DetectionDataMapper">
+	<resultMap id="BaseResultMap"
+		type="com.nbst.model.DetectionData">
+		<id column="JCSJ_ID" property="jcsjId" jdbcType="INTEGER" />
+		<result column="JCSJ_RECORD_TIME" property="jcsjRecordTime"
+			jdbcType="BIGINT" />
+		<result column="JCSJ_EXTRACT_TIME" property="jcsjExtractTime"
+			jdbcType="BIGINT" />
+		<result column="JCSJ_NO" property="jcsjNo" jdbcType="INTEGER" />
+		<result column="JCSJ_CONTROL_CHART_ID"
+			property="jcsjControlChartId" jdbcType="INTEGER" />
+		<result column="JCSJ_DATA_POINT_HIERARCHICA_DATA"
+			property="jcsjDataPointHierarchicaData" jdbcType="VARCHAR" />
+		<result column="JCSJ_DATA_SAMPLE" property="jcsjDataSample"
+			jdbcType="VARCHAR" />
+		<result column="JCSJ_STATE" property="jcsjState"
+			jdbcType="INTEGER" />
+		<result column="JCSJ_CONTROL_CHART_DATA"
+			property="jcsjControlChartData" jdbcType="VARCHAR" />
+		<result column="JCSJ_USER_ID" property="jcsjUserId"
+			jdbcType="INTEGER" />
+		<result column="JCSJ_DEVICE_ID" property="jcsjDeviceId"
+			jdbcType="INTEGER" />
+		<result column="JCSJ_EXTEND1" property="jcsjExtend1"
+			jdbcType="VARCHAR" />
+		<result column="JCSJ_EXTEND2" property="jcsjExtend2"
+			jdbcType="VARCHAR" />
+		<result column="JCSJ_EXTEND3" property="jcsjExtend3"
+			jdbcType="VARCHAR" />
+		<result column="JCSJ_EXTEND4" property="jcsjExtend4"
+			jdbcType="VARCHAR" />
+		<result column="JCSJ_EXTEND5" property="jcsjExtend5"
+			jdbcType="VARCHAR" />
+		<result column="YH_USERNAME" property="yhName"
+			jdbcType="VARCHAR" />
+		<result column="JCSB_NAME" property="sbName" jdbcType="VARCHAR" />
+		<result column="KZTXX_SPECIFICATION_UPPER_LIMIT"
+			property="jcsSpecificationUpperLimit" jdbcType="VARCHAR" />
+		<result column="KZTXX_TARGET_VALUE" property="jcsTargetValue"
+			jdbcType="VARCHAR" />
+		<result column="KZTXX_SPECIFICATION_DOWN_LIMIT"
+			property="jcsSpecificationDownLimit" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		JCSJ_ID, JCSJ_RECORD_TIME, JCSJ_EXTRACT_TIME, JCSJ_NO,
+		JCSJ_CONTROL_CHART_ID,
+		JCSJ_DATA_POINT_HIERARCHICA_DATA,
+		JCSJ_DATA_SAMPLE, JCSJ_STATE, JCSJ_CONTROL_CHART_DATA, JCSJ_USER_ID,
+		JCSJ_DEVICE_ID,
+		JCSJ_EXTEND1, JCSJ_EXTEND2, JCSJ_EXTEND3, JCSJ_EXTEND4,
+		JCSJ_EXTEND5
+	</sql>
+	<select id="findById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from detection_data
+		where JCSJ_ID = #{jcsjId,jdbcType=INTEGER}
+	</select>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from detection_data
+		where JCSJ_ID = #{jcsjId,jdbcType=INTEGER}
+	</delete>
+	<delete id="deleteAll" parameterType="java.lang.Integer">
+		delete from detection_data
+		where JCSJ_CONTROL_CHART_ID = #{jcsjControlChartId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.nbst.model.DetectionData"
+		useGeneratedKeys="true" keyProperty="jcsjId">
+		insert into detection_data
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jcsjId != null">
+				JCSJ_ID,
+			</if>
+			<if test="jcsjRecordTime != null">
+				JCSJ_RECORD_TIME,
+			</if>
+			<if test="jcsjExtractTime != null">
+				JCSJ_EXTRACT_TIME,
+			</if>
+			<if test="jcsjNo != null">
+				JCSJ_NO,
+			</if>
+			<if test="jcsjControlChartId != null">
+				JCSJ_CONTROL_CHART_ID,
+			</if>
+			<if test="jcsjDataPointHierarchicaData != null">
+				JCSJ_DATA_POINT_HIERARCHICA_DATA,
+			</if>
+			<if test="jcsjDataSample != null">
+				JCSJ_DATA_SAMPLE,
+			</if>
+			<if test="jcsjState != null">
+				JCSJ_STATE,
+			</if>
+			<if test="jcsjControlChartData != null">
+				JCSJ_CONTROL_CHART_DATA,
+			</if>
+			<if test="jcsjUserId != null">
+				JCSJ_USER_ID,
+			</if>
+			<if test="jcsjDeviceId != null">
+				JCSJ_DEVICE_ID,
+			</if>
+			<if test="jcsjExtend1 != null">
+				JCSJ_EXTEND1,
+			</if>
+			<if test="jcsjExtend2 != null">
+				JCSJ_EXTEND2,
+			</if>
+			<if test="jcsjExtend3 != null">
+				JCSJ_EXTEND3,
+			</if>
+			<if test="jcsjExtend4 != null">
+				JCSJ_EXTEND4,
+			</if>
+			<if test="jcsjExtend5 != null">
+				JCSJ_EXTEND5,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jcsjId != null">
+				#{jcsjId,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjRecordTime != null">
+				#{jcsjRecordTime,jdbcType=BIGINT},
+			</if>
+			<if test="jcsjExtractTime != null">
+				#{jcsjExtractTime,jdbcType=BIGINT},
+			</if>
+			<if test="jcsjNo != null">
+				#{jcsjNo,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjControlChartId != null">
+				#{jcsjControlChartId,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjDataPointHierarchicaData != null">
+				#{jcsjDataPointHierarchicaData,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjDataSample != null">
+				#{jcsjDataSample,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjState != null">
+				#{jcsjState,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjControlChartData != null">
+				#{jcsjControlChartData,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjUserId != null">
+				#{jcsjUserId,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjDeviceId != null">
+				#{jcsjDeviceId,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjExtend1 != null">
+				#{jcsjExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend2 != null">
+				#{jcsjExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend3 != null">
+				#{jcsjExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend4 != null">
+				#{jcsjExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend5 != null">
+				#{jcsjExtend5,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="update" parameterType="com.nbst.model.DetectionData">
+		update detection_data
+		<set>
+			<if test="jcsjRecordTime != null">
+				JCSJ_RECORD_TIME = #{jcsjRecordTime,jdbcType=BIGINT},
+			</if>
+			<if test="jcsjExtractTime != null">
+				JCSJ_EXTRACT_TIME = #{jcsjExtractTime,jdbcType=BIGINT},
+			</if>
+			<if test="jcsjNo != null">
+				JCSJ_NO = #{jcsjNo,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjControlChartId != null">
+				JCSJ_CONTROL_CHART_ID =
+				#{jcsjControlChartId,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjDataPointHierarchicaData != null">
+				JCSJ_DATA_POINT_HIERARCHICA_DATA =
+				#{jcsjDataPointHierarchicaData,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjDataSample != null">
+				JCSJ_DATA_SAMPLE = #{jcsjDataSample,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjState != null">
+				JCSJ_STATE = #{jcsjState,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjControlChartData != null">
+				JCSJ_CONTROL_CHART_DATA =
+				#{jcsjControlChartData,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjUserId != null">
+				JCSJ_USER_ID = #{jcsjUserId,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjDeviceId != null">
+				JCSJ_DEVICE_ID = #{jcsjDeviceId,jdbcType=INTEGER},
+			</if>
+			<if test="jcsjExtend1 != null">
+				JCSJ_EXTEND1 = #{jcsjExtend1,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend2 != null">
+				JCSJ_EXTEND2 = #{jcsjExtend2,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend3 != null">
+				JCSJ_EXTEND3 = #{jcsjExtend3,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend4 != null">
+				JCSJ_EXTEND4 = #{jcsjExtend4,jdbcType=VARCHAR},
+			</if>
+			<if test="jcsjExtend5 != null">
+				JCSJ_EXTEND5 = #{jcsjExtend5,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where JCSJ_ID = #{jcsjId,jdbcType=INTEGER}
+	</update>
+	<select id="findByCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from detection_data
+		where 1=1
+		<if test="jcsjRecordTime != null">
+			and JCSJ_RECORD_TIME = #{jcsjRecordTime,jdbcType=BIGINT}
+		</if>
+		<if test="jcsjExtractTime != null">
+			and JCSJ_EXTRACT_TIME = #{jcsjExtractTime,jdbcType=BIGINT}
+		</if>
+		<if test="jcsjNo != null">
+			and JCSJ_NO = #{jcsjNo,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjControlChartId != null">
+			and JCSJ_CONTROL_CHART_ID =
+			#{jcsjControlChartId,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjDataPointHierarchicaData != null">
+			and JCSJ_DATA_POINT_HIERARCHICA_DATA =
+			#{jcsjDataPointHierarchicaData,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjDataSample != null">
+			and JCSJ_DATA_SAMPLE = #{jcsjDataSample,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjState != null">
+			and JCSJ_STATE = #{jcsjState,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjControlChartData != null">
+			and JCSJ_CONTROL_CHART_DATA =
+			#{jcsjControlChartData,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjUserId != null">
+			and JCSJ_USER_ID = #{jcsjUserId,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjDeviceId != null">
+			and JCSJ_DEVICE_ID = #{jcsjDeviceId,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjExtend1 != null">
+			and JCSJ_EXTEND1 = #{jcsjExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend2 != null">
+			and JCSJ_EXTEND2 = #{jcsjExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend3 != null">
+			and JCSJ_EXTEND3 = #{jcsjExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend4 != null">
+			and JCSJ_EXTEND4 = #{jcsjExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend5 != null">
+			and JCSJ_EXTEND5 = #{jcsjExtend5,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="count" resultType="java.lang.Integer"
+		parameterType="Map">
+		select count(*) from detection_data
+		where 1=1
+		<if test="jcsjRecordTime != null">
+			and JCSJ_RECORD_TIME = #{jcsjRecordTime,jdbcType=BIGINT}
+		</if>
+		<if test="jcsjExtractTime != null">
+			and JCSJ_EXTRACT_TIME = #{jcsjExtractTime,jdbcType=BIGINT}
+		</if>
+		<if test="jcsjNo != null">
+			and JCSJ_NO = #{jcsjNo,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjControlChartId != null">
+			and JCSJ_CONTROL_CHART_ID =
+			#{jcsjControlChartId,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjDataPointHierarchicaData != null">
+			and JCSJ_DATA_POINT_HIERARCHICA_DATA =
+			#{jcsjDataPointHierarchicaData,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjDataSample != null">
+			and JCSJ_DATA_SAMPLE = #{jcsjDataSample,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjState != null">
+			and JCSJ_STATE = #{jcsjState,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjControlChartData != null">
+			and JCSJ_CONTROL_CHART_DATA =
+			#{jcsjControlChartData,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjUserId != null">
+			and JCSJ_USER_ID = #{jcsjUserId,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjDeviceId != null">
+			and JCSJ_DEVICE_ID = #{jcsjDeviceId,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjExtend1 != null">
+			and JCSJ_EXTEND1 = #{jcsjExtend1,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend2 != null">
+			and JCSJ_EXTEND2 = #{jcsjExtend2,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend3 != null">
+			and JCSJ_EXTEND3 = #{jcsjExtend3,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend4 != null">
+			and JCSJ_EXTEND4 = #{jcsjExtend4,jdbcType=VARCHAR}
+		</if>
+		<if test="jcsjExtend5 != null">
+			and JCSJ_EXTEND5 = #{ ,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<select id="searchtime" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		`user`.YH_USERNAME,
+		detection_device.JCSB_NAME,
+		detection_data.JCSJ_ID,
+		detection_data.JCSJ_RECORD_TIME,
+		detection_data.JCSJ_EXTRACT_TIME,
+		detection_data.JCSJ_NO,
+		detection_data.JCSJ_CONTROL_CHART_ID,
+		detection_data.JCSJ_DATA_POINT_HIERARCHICA_DATA,
+		detection_data.JCSJ_DATA_SAMPLE,
+		detection_data.JCSJ_STATE,
+		detection_data.JCSJ_CONTROL_CHART_DATA,
+		detection_data.JCSJ_USER_ID,
+		detection_data.JCSJ_DEVICE_ID,
+		detection_data.JCSJ_EXTEND1,
+		detection_data.JCSJ_EXTEND2,
+		detection_data.JCSJ_EXTEND3,
+		detection_data.JCSJ_EXTEND4,
+		detection_data.JCSJ_EXTEND5,
+		control_chart_infomation.KZTXX_SPECIFICATION_UPPER_LIMIT,
+		control_chart_infomation.KZTXX_TARGET_VALUE,
+		control_chart_infomation.KZTXX_SPECIFICATION_DOWN_LIMIT
+		FROM
+		detection_data
+		left join user on
+		`user`.YH_ID =
+		detection_data.JCSJ_USER_ID
+		left join detection_device on
+		detection_device.JCSB_ID =
+		detection_data.JCSJ_DEVICE_ID
+		left join
+		control_chart_infomation on
+		detection_data.JCSJ_CONTROL_CHART_ID =
+		control_chart_infomation.KZTXX_ID
+
+		where 1=1
+		<if test="startTime1!=null and endTime1!= null">
+			and JCSJ_RECORD_TIME BETWEEN
+			#{startTime1,jdbcType=BIGINT}
+			AND
+			#{endTime1,jdbcType=BIGINT}
+		</if>
+		<if test="startTime2!=null and endTime2!= null">
+			and JCSJ_EXTRACT_TIME BETWEEN
+			#{startTime2,jdbcType=BIGINT}
+			AND
+			#{endTime2,jdbcType=BIGINT}
+		</if>
+		<if test="ids != null">
+			and JCSJ_CONTROL_CHART_ID in (
+			<foreach collection="ids" item="id" index="index"
+				separator=",">
+				#{id,jdbcType=INTEGER}
+			</foreach>
+			)
+		</if>
+		<if test="Id != null">
+			and JCSJ_CONTROL_CHART_ID = #{Id,jdbcType=INTEGER}
+		</if>
+		<if test="jcsjDataPointHierarchicaData != null">
+			and JCSJ_DATA_POINT_HIERARCHICA_DATA =
+			#{jcsjDataPointHierarchicaData,jdbcType=VARCHAR}
+		</if>
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="countByState" resultType="java.lang.Integer"
+		parameterType="map">
+		select count(*) from detection_data
+		where JCSJ_STATE =
+		#{jcsjState,jdbcType=INTEGER}
+		and JCSJ_CONTROL_CHART_ID =
+		#{jcsjControlChartId,jdbcType=INTEGER}
+	</select>
+	<select id="searchtimecount" resultType="java.lang.Integer"
+		parameterType="Map">
+		select count(*) from detection_data
+		where 1=1
+		<if test="startTime1!=null and endTime1!= null">
+			and JCSJ_RECORD_TIME BETWEEN
+			#{startTime1,jdbcType=BIGINT}
+			AND
+			#{endTime1,jdbcType=BIGINT}
+		</if>
+		<if test="startTime2!=null and endTime2!= null">
+			and JCSJ_EXTRACT_TIME BETWEEN
+			#{startTime2,jdbcType=BIGINT}
+			AND
+			#{endTime2,jdbcType=BIGINT}
+		</if>
+		<if test="ids != null">
+			and JCSJ_CONTROL_CHART_ID in (
+			<foreach collection="ids" item="id" index="index"
+				separator=",">
+				#{id,jdbcType=INTEGER}
+			</foreach>
+			)
+		</if>
+		<if test="jcsjDataPointHierarchicaData != null">
+			and JCSJ_DATA_POINT_HIERARCHICA_DATA =
+			#{jcsjDataPointHierarchicaData,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<delete id="deleteids" parameterType="java.lang.Integer">
+		delete from detection_data
+		where JCSJ_ID in (
+		<foreach collection="ids" item="id" index="index"
+			separator=",">
+			#{id,jdbcType=INTEGER}
+		</foreach>
+		)
+	</delete>
+	<select id="findDetectionDataByControlChartId"
+		resultType="java.lang.String" parameterType="map">
+		select
+		JCSJ_DATA_SAMPLE
+		from detection_data
+		where JCSJ_CONTROL_CHART_ID =
+		#{jcsjControlChartId,jdbcType=INTEGER}
+		<if test="jcsjId != null">
+			and JCSJ_ID &lt; #{jcsjId,jdbcType=INTEGER}
+		</if>
+		order by JCSJ_ID desc
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<select id="findDetectionDataIdByControlChartId"
+		resultType="java.lang.Integer" parameterType="map">
+		select
+		JCSJ_ID
+		from detection_data
+		where JCSJ_CONTROL_CHART_ID =
+		#{jcsjControlChartId,jdbcType=INTEGER}
+		order by JCSJ_ID
+		<if test="limit!=null and offset!=null">
+			limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+		</if>
+	</select>
+	<update id="clearOCCRuleByIds" parameterType="map">
+		update detection_data
+		<set>
+			JCSJ_STATE = 1,
+			JCSJ_EXTEND4 = ""
+		</set>
+		where JCSJ_ID in (
+		<foreach collection="ids" item="id" index="index"
+			separator=",">
+			#{id,jdbcType=INTEGER}
+		</foreach>
+		)
+	</update>
+	<insert id="copyDataByControlChartIds" parameterType="map">
+		insert into detection_data
+		(JCSJ_RECORD_TIME,JCSJ_EXTRACT_TIME,JCSJ_NO,JCSJ_CONTROL_CHART_ID,
+		JCSJ_DATA_POINT_HIERARCHICA_DATA,JCSJ_DATA_SAMPLE,JCSJ_STATE,JCSJ_CONTROL_CHART_DATA,
+		JCSJ_USER_ID,JCSJ_DEVICE_ID,JCSJ_EXTEND1,JCSJ_EXTEND2,JCSJ_EXTEND3,JCSJ_EXTEND4,JCSJ_EXTEND5)
+		select JCSJ_RECORD_TIME,JCSJ_EXTRACT_TIME,JCSJ_NO,replace(JCSJ_CONTROL_CHART_ID,JCSJ_CONTROL_CHART_ID,#{newId,jdbcType=INTEGER}),
+		JCSJ_DATA_POINT_HIERARCHICA_DATA,JCSJ_DATA_SAMPLE,if(JCSJ_STATE=3,2,JCSJ_STATE),JCSJ_CONTROL_CHART_DATA,
+		JCSJ_USER_ID,JCSJ_DEVICE_ID,JCSJ_EXTEND1,JCSJ_EXTEND2,JCSJ_EXTEND3,JCSJ_EXTEND4,JCSJ_EXTEND5
+		from detection_data
+		where JCSJ_CONTROL_CHART_ID in 
+		<if test="ids !=null">
+			<foreach collection="ids" item="id" index="index" separator=",">
+				#{id,jdbcType=INTEGER}
+			</foreach>
+		</if>
+		<if test="Id !=null">
+			(#{Id,jdbcType=INTEGER})
+		</if>
+	</insert>
+	<select id="findLastDataByControlChartId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from detection_data
+		where JCSJ_CONTROL_CHART_ID = #{jcsjControlChartId,jdbcType=INTEGER}
+		order by JCSJ_ID desc
+		limit 0,1
+	</select>
+</mapper>

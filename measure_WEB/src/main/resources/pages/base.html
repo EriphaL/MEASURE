@@ -1,0 +1,181 @@
+<head th:fragment="header (title)">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<title th:text="${title}"></title>
+	
+	<!-- 字体规则：css3中允许使用自定义字体的一个模块  -->
+	<link th:href="@{plugins/fonts/fontFace/css/font-face.css}" rel="stylesheet" />
+	<!-- font-awesome：图标字体库和CSS框架 -->
+	<link th:href="@{plugins/fonts/fontAwesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet"/>
+	
+	<!-- bootstrap样式 v3.1.1 -->
+	<link th:href="@{plugins/bootstrap/css/bootstrap.min-3.1.1.css}" rel="stylesheet" />
+	<!-- bootstrap样式重置 -->
+	<link th:href="@{plugins/bootstrap/css/bootstrap-reset.css}" rel="stylesheet" />
+	<!-- bootstrap表格样式 -->
+	<link th:href="@{plugins/bootstrap/css/bootstrap-table.min.css}" rel="stylesheet" />
+	<!-- bootstrap下拉框样式 -->
+	<link th:href="@{plugins/bootstrap/css/bootstrap-select.min.css}" rel="stylesheet" />
+	<!-- bootstrap标签页样式 -->
+	<link th:href="@{plugins/bootstrap/css/bootstrap-addtabs.css}" rel="stylesheet" />
+	
+	<!-- sweetalert2提示框样式 -->
+	<link th:href="@{plugins/sweetalert2/css/sweetalert2.min-7.21.1.css}" rel="stylesheet" />
+	
+	<!-- showBo弹出样式 -->
+	<link th:href="@{plugins/showBo/css/showBo.css}" rel="stylesheet" />
+	
+	<!-- toastr提示框样式 -->
+	<link th:href="@{plugins/toastr/css/toastr.css}" rel="stylesheet" />
+	
+	<!-- jedate时间控件样式 -->
+	<link th:href="@{plugins/time/jeDate/css/jedate-6.5.0.css}" rel="stylesheet" />
+	
+	<!-- jquery-UI样式 -->
+	<link th:href="@{plugins/jquery/css/jquery-ui-1.10.3.css}" rel="stylesheet" />
+	
+	<!-- 动画效果样式 -->
+	<link th:href="@{plugins/common/css/animate.min.css}" rel="stylesheet" />
+	<!-- 下拉列表样式 -->
+	<link th:href="@{plugins/common/css/dropdown.css}" rel="stylesheet" />
+	<!-- 样式 -->
+	<link th:href="@{plugins/common/css/style.css}" rel="stylesheet" />
+	<link th:href="@{plugins/common/css/style-responsive.css}" rel="stylesheet" />
+	<!-- tab页 -->
+	<link th:href="@{plugins/common/css/TabPanel.css}" rel="stylesheet" />
+	<!-- iCheck样式 -->
+	<link th:href="@{plugins/iCheck/skins/square/red.css}" rel="stylesheet" />
+	<link th:href="@{plugins/iCheck/skins/style1.css}" rel="stylesheet" />
+	<!-- ztree样式 -->
+<!-- 	<link th:href="@{plugins/ztree/css/zTreeStyle/zTreeStyle.css}" rel="stylesheet" /> -->
+	<link th:href="@{plugins/ztree/css/metroStyle/metroStyle.css}" rel="stylesheet" />
+	<!--[if lt IE 8]>
+	    <script th:src="@{/plugins/forIE/js/html5shiv.min.js}"></script>
+	    <script th:src="@{/plugins/forIE/js/respond.min.js}"></script>
+	<![endif]-->
+</head>
+
+<div th:fragment="bottom">
+	<input type="hidden" id="ctx" th:value="@{/}" />
+	
+	<div th:text="${session.copy}" hidden="true">[...]</div>
+	<!-- jquery -->
+	<script th:src="@{plugins/jquery/js/jquery-1.10.2.min.js}"></script>
+	
+	<!-- bootstrap -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-3.3.7.js}"></script>
+	<!-- bootstrap一般下拉框 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-select.min.js}"></script>
+	<script th:src="@{plugins/bootstrap/js/defaults-zh_CN.js}"></script>
+	
+	<!-- sweetalert2提示框 -->
+	<script th:src="@{plugins/sweetalert2/js/sweetalert2.min-7.21.1.js}"></script>
+	
+	<!-- 公共 -->
+	<script th:src="@{plugins/common/js/base.js}"></script>
+</div>
+
+<div th:fragment="indexPublic">
+	<!-- 首页公共js -->
+	<script th:src="@{plugins/common/js/index_public.js}"></script>
+</div>
+
+<div th:fragment="plugIn">
+	<!-- bootstrap标签页 -->
+	<!-- <script th:src="@{plugins/bootstrap/js/bootstrap-addtabs.js}"></script> -->
+	<!-- tab页插件 -->
+	<script th:src="@{plugins/common/js/Fader.js}"></script>
+	<script th:src="@{plugins/common/js/TabPanel.js}"></script>
+	<!-- 右键点击插件 -->
+	<script th:src="@{plugins/jquery/js/jquery.contextify.js}"></script>
+</div>
+
+
+<div th:fragment="bootstrapTablez">
+	<!-- bootstrap表格 -->
+	<!-- <script th:src="@{plugins/bootstrap/js/bootstrap-table-1.9.0.min.js}"></script> -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-table.js}"></script>
+	<!-- bootstrap表格内容汉化 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-table-zh-CN.js}"></script>
+	<!-- bootstrap表格里的下拉框 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-select.js}"></script>
+</div>
+
+<div th:fragment="bootstrapTable">
+	<!-- bootstrap表格 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-table-1.9.0.min.js}"></script>
+	<script th:src="@{plugins/bootstrap/js/bootstrap-tablex.js}"></script>
+	<!-- bootstrap表格内容汉化 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-table-zh-CN.js}"></script>
+	<!-- bootstrap表格里的下拉框 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-select.js}"></script>
+</div>
+
+<div th:fragment="bootstrapTabley">
+	<!-- bootstrap表格 -->
+	<!-- <script th:src="@{plugins/bootstrap/js/bootstrap-table-1.9.0.min.js}"></script> -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-tabley.js}"></script>
+	<!-- bootstrap表格内容汉化 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-table-zh-CN.js}"></script>
+	<!-- bootstrap表格里的下拉框 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-select.js}"></script>
+</div>
+
+<div th:fragment="bootstrapTablez">
+	<!-- bootstrap表格 -->
+	<!-- <script th:src="@{plugins/bootstrap/js/bootstrap-table-1.9.0.min.js}"></script> -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-tablex-change.js}"></script>
+	<!-- bootstrap表格内容汉化 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-table-zh-CN.js}"></script>
+	<!-- bootstrap表格里的下拉框 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap-select.js}"></script>
+</div>
+
+<div th:fragment="tableExport">
+	<!-- 表数据导出 -->
+	<script th:src="@{plugins/bootstrap/export/tableExport.js}"></script>
+	<script th:src="@{plugins/bootstrap/export/bootstrap-table-export.js}"></script>
+	<!-- <script th:src="@{plugins/bootstrap/js/exportColumn.js}"></script> -->
+</div>
+
+<div th:fragment="imageExport">
+	<!-- 表数据导出 -->
+	<script th:src="@{plugins/imageExport/html2canvas.min.js}"></script>
+	<script th:src="@{plugins/imageExport/canvas2image.js}"></script>
+	<script th:src="@{plugins/imageExport/base64.js}"></script>
+</div>
+
+<div th:fragment="echars">
+	<!-- 图 -->
+	<script th:src="@{plugins/echars/js/echarts.min-4.1.0.js}"></script>
+	<script th:src="@{plugins/echars/js/macarons.js}"></script>
+</div>
+
+<div th:fragment="ztree">
+	<!-- ztree树插件 -->
+	<script th:src="@{plugins/ztree/js/jquery.ztree.core.js}"></script>
+	<script th:src="@{plugins/ztree/js/jquery.ztree.excheck.js}"></script>
+</div>
+
+<div th:fragment="showBo">
+	<!-- showBo弹出插件 -->
+	<script th:src="@{plugins/showBo/js/showBo.js}"></script>
+</div>
+
+<div th:fragment="toastr">
+	<!-- toastr提示插件 -->
+	<script th:src="@{plugins/toastr/js/toastr.js}"></script>
+</div>
+
+<div th:fragment="others">
+	<!-- 时间插件 -->
+	<script th:src="@{plugins/time/jeDate/js/jedate.min-6.5.0.js}"></script>
+	<!-- 模糊查询插件 -->
+	<script th:src="@{{plugins/bootstrap/js/bootstrap-typeahead.js}"></script>
+	<!--美化checkbox和radio样式 -->
+	<script th:src="@{{plugins/iCkeck/js/jquery.ickeck.js}"></script>
+	<script th:src="@{{plugins/iCkeck/js/ickeck-init.js}"></script>
+</div>
